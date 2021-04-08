@@ -5,7 +5,7 @@ body {background-image: url(https://raw.githubusercontent.com/gabriel-rausch/EIA
 
 
 
-nav {position: fixed; top: 0%; padding-left: 1300px; font-size: 13pt; 
+nav {position: fixed; top: 0%; padding-left: 1350px; font-size: 13pt; 
       
 
 
@@ -19,7 +19,7 @@ a:hover {background-color: black;
 
 }
 
-main {text-align: center; width: 800px; margin: auto; 
+main {text-align: center; width: 800px; margin: auto;
       
 
 
@@ -76,15 +76,8 @@ main {text-align: center; width: 800px; margin: auto;
 }
 
 
-#Facebooklogo {margin-left: 500px; font-size: 50px; z-index: 2;
-
-
-
-}
-
-
 #Kreis {background-color: orangered; left: 370px; position: absolute; width: 950px; height: 500px; top: 0%;
-        border: 1px solid black; text-align: center; border-radius: 500px 500px 0 0; 
+        border: 3px solid black; text-align: center; border-radius: 500px 500px 0 0; 
         transform: rotate(180deg); z-index: 1;
 
 
@@ -92,3 +85,71 @@ main {text-align: center; width: 800px; margin: auto;
 }
 
 
+#iconFacebook {position: absolute; margin-left: 700px; margin-top: 400px; z-index: 1;
+               
+
+
+
+}
+
+
+
+#iconInstagram {position: absolute; margin-left: 753px; margin-top: 401px; z-index: 1;
+
+
+}
+
+#TextimKreis {position: absolute;  margin-left: 470px; margin-top: -190px; z-index: 3; font-size: 220px;
+
+
+
+}
+
+
+
+#TextimKreis2 {position: absolute; z-index: 3; font-size: 23px; margin-left: 700px; margin-top: 240px;
+               
+
+
+
+}
+
+
+#Name {margin-left: 297px; font-size: 30px;
+
+
+
+
+}
+
+
+#Kontaktseite {width: 800px; margin: auto; margin-top: 450px; margin-left: 600px;
+
+
+
+
+}
+
+form {
+      background-color: #eee;
+      width: 370px; /* Breite des Formulars */
+      padding: 20px;
+      border: 1px solid #8c8c8c;
+    }
+label { /* Beschriftung auf eigener Zeile */
+      display: block;
+      cursor: pointer; /* Mauszeiger wird zur Hand */
+    }
+input#absender,
+textarea {
+      width: 300px;
+      border: 1px solid #8c8c8c;
+      margin-bottom: 1em;
+    }
+textarea {
+      height: 20em;
+    }
+input:focus,
+textarea:focus {
+      background-color: #d9d9d9;
+    }
