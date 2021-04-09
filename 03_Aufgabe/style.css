@@ -1,11 +1,12 @@
 body {background-image: url(https://raw.githubusercontent.com/gabriel-rausch/EIA1-Material/master/L03/task_material/images/bg.png);
-      font-family: sans-serif; 
+      font-family: sans-serif; width: 800px; margin: auto;
 
 }
 
 
 
-nav {position: fixed; top: 0%; padding-left: 1350px; font-size: 13pt; 
+nav {position: fixed; top: 0%; font-size: 13pt; width: 800px; margin: auto; display: flex;
+      justify-content: flex-end; z-index: 4;
       
 
 
@@ -14,7 +15,12 @@ nav {position: fixed; top: 0%; padding-left: 1350px; font-size: 13pt;
 
 
 
-a:hover {background-color: black;
+
+
+
+
+
+a:hover {background-color: white;
 
 
 }
@@ -76,7 +82,14 @@ main {text-align: center; width: 800px; margin: auto;
 }
 
 
-#Kreis {background-color: orangered; left: 370px; position: absolute; width: 950px; height: 500px; top: 0%;
+header {display: flex; justify-content: center;
+
+
+
+}
+
+
+#Kreis {background-color: orangered; position: absolute; width: 950px; height: 500px; top: 0%;
         border: 3px solid black; text-align: center; border-radius: 500px 500px 0 0; 
         transform: rotate(180deg); z-index: 1;
 
@@ -85,7 +98,7 @@ main {text-align: center; width: 800px; margin: auto;
 }
 
 
-#iconFacebook {position: absolute; margin-left: 700px; margin-top: 400px; z-index: 1;
+#iconFacebook {position: absolute; margin-top: 400px; z-index: 1; margin-left: 60px;
                
 
 
@@ -94,12 +107,12 @@ main {text-align: center; width: 800px; margin: auto;
 
 
 
-#iconInstagram {position: absolute; margin-left: 753px; margin-top: 401px; z-index: 1;
+#iconInstagram {position: absolute;  margin-top: 400px; z-index: 1;
 
 
 }
 
-#TextimKreis {position: absolute;  margin-left: 470px; margin-top: -190px; z-index: 3; font-size: 220px;
+#TextimKreis {position: absolute;  margin-top: -190px; z-index: 3; font-size: 220px;
 
 
 
@@ -107,7 +120,7 @@ main {text-align: center; width: 800px; margin: auto;
 
 
 
-#TextimKreis2 {position: absolute; z-index: 3; font-size: 23px; margin-left: 700px; margin-top: 240px;
+#TextimKreis2 { z-index: 3; font-size: 23px; margin-left: 300px; margin-top: 240px;
                
 
 
@@ -123,7 +136,7 @@ main {text-align: center; width: 800px; margin: auto;
 }
 
 
-#Kontaktseite {width: 800px; margin: auto; margin-top: 450px; margin-left: 600px;
+#Kontaktseite {width: 800px; margin-top: 300px; display: flex; justify-content: center;
 
 
 
