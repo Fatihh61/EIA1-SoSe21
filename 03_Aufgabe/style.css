@@ -6,24 +6,42 @@ body {background-image: url(https://raw.githubusercontent.com/gabriel-rausch/EIA
 
 
 nav {position: fixed; top: 0%; font-size: 13pt; width: 800px; margin: auto; display: flex;
-      justify-content: flex-end; z-index: 4;
+      justify-content: flex-end; z-index: 4; margin-left: 270px;  font-weight: bold;
       
 
 
 }
 
 
+#port {color: orangered;
 
-
-
-
-
-
-
-a:hover {background-color: white;
 
 
 }
+
+
+#navigator {background-color: black; border-radius: 50px 50px; padding-right: 30px;
+            
+
+
+
+}
+
+
+
+a:hover {background-color: cadetblue;
+
+
+
+}
+
+
+
+
+
+
+
+
 
 main {text-align: center; width: 800px; margin: auto;
       
@@ -47,11 +65,22 @@ main {text-align: center; width: 800px; margin: auto;
 }
 
 
-.Foto_Video {font-size: 15pt; color: orangered; font-weight: bold;
+.Foto_Video {font-size: 17pt; color: orangered; font-weight: bold;
 
 
 
 }
+
+
+
+img:hover {transform: scale(1.1);
+
+
+
+}
+
+
+
 
 
 #Kontaktdaten {font-size: 18pt;
@@ -68,11 +97,7 @@ main {text-align: center; width: 800px; margin: auto;
 }
 
 
-.Facebook_Instagram {text-align: center;
 
-
-
-}
 
 
 #aboutme {font-size: 25pt;  
@@ -98,7 +123,7 @@ header {display: flex; justify-content: center;
 }
 
 
-#iconFacebook {position: absolute; margin-top: 400px; z-index: 1; margin-left: 60px;
+#iconFacebook {position: absolute; margin-top: 400px; z-index: 1; margin-left: 60px; z-index: 10;
                
 
 
@@ -106,8 +131,21 @@ header {display: flex; justify-content: center;
 }
 
 
+#iconFacebook:hover {transform: scale(1.1);
 
-#iconInstagram {position: absolute;  margin-top: 400px; z-index: 1;
+
+
+}
+
+
+
+#iconInstagram {position: absolute;  margin-top: 400px; z-index: 10;
+
+
+}
+
+#iconInstagram:hover {transform: scale(1.1);
+
 
 
 }
