@@ -1,12 +1,12 @@
 body {background-image: url(https://raw.githubusercontent.com/gabriel-rausch/EIA1-Material/master/L03/task_material/images/bg.png);
-      font-family: sans-serif; width: 800px; margin: auto;
+      font-family: sans-serif; width: 800px; margin: 0 auto;
 
 }
 
 
 
 nav {position: fixed; top: 0%; font-size: 13pt; width: 800px; margin: auto; display: flex;
-      justify-content: flex-end; z-index: 4; margin-left: 270px;  font-weight: bold;
+      justify-content: flex-end; z-index: 4; font-weight: bold;
       
 
 
@@ -43,11 +43,11 @@ a:hover {background-color: cadetblue;
 
 
 
-main {text-align: center; width: 800px; margin: auto;
+
       
 
 
-}
+
 
 
 #Überschrift {text-align: center; font-size: 50pt;
@@ -114,7 +114,7 @@ header {display: flex; justify-content: center;
 }
 
 
-#Kreis {background-color: orangered; position: absolute; width: 950px; height: 500px; top: 0%;
+#Kreis {background-color: orangered; position: absolute; width: 800px; height: 500px; top: 0%;
         border: 3px solid black; text-align: center; border-radius: 500px 500px 0 0; 
         transform: rotate(180deg); z-index: 1;
 
