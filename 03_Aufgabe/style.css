@@ -38,33 +38,6 @@ a:hover {background-color: cadetblue;
 
 
 
-
-
-
-
-
-
-      
-
-
-
-
-
-#Überschrift {text-align: center; font-size: 50pt;
-
-
-
-}
-
-
-#Unterüberschrift {font-size: 20pt; text-decoration: underline; color: orangered; font-weight: bold;
-                   
-    
-
-
-}
-
-
 .Foto_Video {font-size: 17pt; color: orangered; font-weight: bold;
 
 
@@ -123,7 +96,7 @@ header {display: flex; justify-content: center;
 }
 
 
-#iconFacebook {position: absolute; margin-top: 400px; z-index: 1; margin-left: 60px; z-index: 10;
+#iconFacebook {position: absolute; margin-top: 400px; margin-left: -300px; z-index: 10;
                
 
 
@@ -139,7 +112,7 @@ header {display: flex; justify-content: center;
 
 
 
-#iconInstagram {position: absolute;  margin-top: 400px; z-index: 10;
+#iconInstagram {position: absolute;  margin-top: 400px; z-index: 10; margin-left: -360px;
 
 
 }
@@ -150,7 +123,7 @@ header {display: flex; justify-content: center;
 
 }
 
-#TextimKreis {position: absolute;  margin-top: -190px; z-index: 3; font-size: 220px;
+#TextimKreis {position: absolute;  margin-top: -160px; z-index: 3; font-size: 150pt;
 
 
 
@@ -158,7 +131,7 @@ header {display: flex; justify-content: center;
 
 
 
-#TextimKreis2 { z-index: 3; font-size: 23px; margin-left: 300px; margin-top: 240px;
+#TextimKreis2 { z-index: 3; font-size: 23px; margin-left: 220px; margin-top: 240px;
                
 
 
@@ -166,7 +139,7 @@ header {display: flex; justify-content: center;
 }
 
 
-#Name {margin-left: 297px; font-size: 30px;
+#Name {margin-left: 295px; font-size: 30px;
 
 
 
@@ -181,21 +154,27 @@ header {display: flex; justify-content: center;
 
 }
 
+
+
+#ÜberMich {text-align: center; 
+
+
+
+
+}
+
 form {
       background-color: #eee;
-      width: 370px; /* Breite des Formulars */
+      width: 370px; 
       padding: 20px;
       border: 1px solid #8c8c8c;
-    }
-label { /* Beschriftung auf eigener Zeile */
-      display: block;
-      cursor: pointer; /* Mauszeiger wird zur Hand */
     }
 input#absender,
 textarea {
       width: 300px;
       border: 1px solid #8c8c8c;
       margin-bottom: 1em;
+      
     }
 textarea {
       height: 20em;
@@ -204,3 +183,12 @@ input:focus,
 textarea:focus {
       background-color: #d9d9d9;
     }
+
+
+
+#Kontaktee {margin-top: -60px; color: orangered; font-size: 22pt; font-weight: bold; 
+            margin-right: -110px;
+
+
+
+}
