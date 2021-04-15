@@ -6,7 +6,7 @@ body {background-image: url(https://raw.githubusercontent.com/gabriel-rausch/EIA
 
 
 nav {position: fixed; top: 0%; font-size: 13pt; width: 800px; margin: auto; display: flex;
-      justify-content: flex-end; z-index: 4; font-weight: bold;
+      justify-content: flex-end; z-index: 4; font-weight: bold; display: inline; text-align: center;
       
 
 
@@ -20,12 +20,15 @@ nav {position: fixed; top: 0%; font-size: 13pt; width: 800px; margin: auto; disp
 }
 
 
-#navigator {background-color: black; border-radius: 50px 50px; padding-right: 30px;
+#navigator {background-color: black;
             
 
 
 
 }
+
+
+
 
 
 
@@ -96,7 +99,12 @@ header {display: flex; justify-content: center;
 }
 
 
-#iconFacebook {position: absolute; margin-top: 400px; margin-left: -300px; z-index: 10;
+#iconFacebook {position: absolute; margin-top: 400px; margin-left: -300px; z-index: 10; 
+               transition-property: transform;
+               transition-duration: 0.3s;
+               transition-timing-function: ease-in-out;
+               
+               
                
 
 
@@ -104,7 +112,7 @@ header {display: flex; justify-content: center;
 }
 
 
-#iconFacebook:hover {transform: scale(1.1);
+#iconFacebook:hover {transform: scale(1.3);
 
 
 
@@ -113,11 +121,14 @@ header {display: flex; justify-content: center;
 
 
 #iconInstagram {position: absolute;  margin-top: 400px; z-index: 10; margin-left: -360px;
+                transition-property: transform;
+                transition-duration: 0.3s;
+                transition-timing-function: ease-in-out;
 
 
 }
 
-#iconInstagram:hover {transform: scale(1.1);
+#iconInstagram:hover {transform: scale(1.3);
 
 
 
