@@ -1,0 +1,36 @@
+body {background-image: url(https://raw.githubusercontent.com/gabriel-rausch/EIA1-Material/master/L04/task_material_summer/Station_7_Youtube/images/bg.png);
+      font-family: Arial, Helvetica, sans-serif;
+
+
+}
+
+#container {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    
+
+
+
+}
+
+
+
+h1 {position: absolute; left: 90px; top: 40px; color: white;
+
+
+
+}
+
+
+#video {position: absolute; top: 60px; left: 75px;
+
+
+
+}
+
+
+#banderole {position: absolute; bottom: 0px; right: 0px;
+
+
+
+}
+
+

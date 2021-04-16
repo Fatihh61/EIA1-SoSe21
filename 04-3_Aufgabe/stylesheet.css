@@ -1,5 +1,5 @@
-body {background-image: url(https://raw.githubusercontent.com/gabriel-rausch/EIA1-Material/master/L04/task_material_summer/Station_4_Forms/images/bg.png);
-      font-family: Arial, Helvetica, sans-serif;
+body {background-image: url(https://raw.githubusercontent.com/gabriel-rausch/EIA1-Material/master/L04/task_material_summer/Station_3_Fonts/images/bg.png);
+
 
 
 }
@@ -13,28 +13,11 @@ body {background-image: url(https://raw.githubusercontent.com/gabriel-rausch/EIA
 
 
 
-h1 {position: absolute; left: 90px; top: 20px; color: white;
+
+h1 {position: absolute; left: 80px; top: 30px; color: white; font-family: Karantina; font-size: 30pt;
 
 
 
 }
 
-
-
-
-
-
-
-#Kontaktformular {position: absolute; left: 70px; top: 95px;
-
-
-
-}
-
-
-p {font-size: 10pt; color: white; font-weight: bold;
-
-
-
-}
 

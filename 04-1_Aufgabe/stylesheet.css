@@ -1,42 +1,39 @@
-body {
-        background-image: url(https://raw.githubusercontent.com/gabriel-rausch/EIA1-Material/master/L04/task_material_summer/Station_2_Hover/images/bg.png);
+body {background-image: url(https://raw.githubusercontent.com/gabriel-rausch/EIA1-Material/master/L04/task_material_summer/Station_1_Positionierung/images/bg.png);
+
+
+
 }
 
-#container {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+#container {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+
+
+
 }
 
-#muschel1 {
-        position: absolute;
-        left: 200px;
-        top: 180px;
+
+#shell {position: absolute; left: -80px; bottom: -20px;
+
+
+
 }
 
-#muschel2 {
-        position: absolute;
-        right: 200px;
-        top: 240px;
+
+#penguin {position: absolute; right: 0px; bottom: 20px;
+
+
+
 }
 
-#perle {
-        position: absolute;
-        left: 60px;
-        bottom: 45px;
-        transition-property: all;
-        transition-duration: 2s;
-        transition-timing-function: ease-in-out;
+
+h1 {position: absolute; left: 80px; top: 30px; color: white;
+
+
+
 }
 
-#perle:hover {
-        background-image: url(https://raw.githubusercontent.com/gabriel-rausch/EIA1-Material/master/L04/task_material_summer/Station_2_Hover/images/muschel.png);
-}
 
-h1 {
-        position: absolute;
-        left: 80px;
-        top: 30px;
-        color: white;
+p {position: absolute; left: 40px; top: 130px; color: white;
+
+
+
 }

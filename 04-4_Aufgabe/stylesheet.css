@@ -1,4 +1,4 @@
-body {background-image: url(https://raw.githubusercontent.com/gabriel-rausch/EIA1-Material/master/L04/task_material_summer/Station_5_Spaltenlayout/images/bg.png);
+body {background-image: url(https://raw.githubusercontent.com/gabriel-rausch/EIA1-Material/master/L04/task_material_summer/Station_4_Forms/images/bg.png);
       font-family: Arial, Helvetica, sans-serif;
 
 
@@ -13,33 +13,7 @@ body {background-image: url(https://raw.githubusercontent.com/gabriel-rausch/EIA
 
 
 
-h1 {position: absolute; left: 90px; top: 40px; color: white;
-
-
-
-}
-
-
-.column {width: 50%; text-align: center;
-
-
-
-}
-
-.row {position: absolute; top: 130px; display: flex; left: 40px; font-size: 12pt;
-
-
-}
-
-
-.column2 {width: 250px; text-align: center;
-
-
-
-}
-
-
-.row2 {position: absolute; display: flex; top: 250px; left: 40px; font-size: 12pt;
+h1 {position: absolute; left: 90px; top: 20px; color: white;
 
 
 
@@ -47,4 +21,20 @@ h1 {position: absolute; left: 90px; top: 40px; color: white;
 
 
 
+
+
+
+
+#Kontaktformular {position: absolute; left: 70px; top: 95px;
+
+
+
+}
+
+
+p {font-size: 10pt; color: white; font-weight: bold;
+
+
+
+}
 
