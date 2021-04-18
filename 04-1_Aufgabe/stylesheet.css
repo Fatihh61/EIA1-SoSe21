@@ -18,21 +18,21 @@ body {background-image: url(https://raw.githubusercontent.com/gabriel-rausch/EIA
 }
 
 
-#penguin {position: absolute; right: 0px; bottom: 20px;
+#penguin {position: absolute; right: -60px; bottom: 20px;
 
 
 
 }
 
 
-h1 {position: absolute; left: 80px; top: 30px; color: white;
+h1 {position: absolute; left: 80px; top: 30px; color: white; font-family: monospace; font-size: 18pt;
 
 
 
 }
 
 
-p {position: absolute; left: 40px; top: 130px; color: white;
+p {position: absolute; left: 40px; top: 130px; color: white; font-family: monospace; font-size: 12pt;
 
 
 
