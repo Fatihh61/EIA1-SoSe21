@@ -1,4 +1,6 @@
-function aufrunde(zahl: number): number {
+namespace Aufgabe5 {
+
+function runden(zahl: number): number {
     return Math.round(zahl * 100) / 100
 
 }
@@ -9,7 +11,7 @@ var Africa2008: number = 1028;
 var Africa2018: number = 1235.5;
 
 
-var countrySouthAmerica: string = "South America";
+var countrySouthAmerica: string = "Southamerica";
 var SouthAmerica2008: number = 1132.6;
 var SouthAmerica2018: number = 1261.5;
 
@@ -19,7 +21,7 @@ var Europe2008: number = 4965.7;
 var Europe2018: number = 4209.3;
 
 
-var countryNorhAmerica: string = "North America";
+var countryNorhAmerica: string = "Northamerica";
 var NorthAmerica2008: number = 6600.4;
 var NorthAmerica2018: number = 6035.6;
 
@@ -38,22 +40,38 @@ var everything2018: number = Africa2018 + SouthAmerica2018 + NorthAmerica2018 + 
 
 
 
-document.querySelector("h2").id = "Text";
+function emission(continentName: string, continent2018: number, continent2008: number) {
+
+    document.querySelector("#titleRegion").innerHTML = continentName;
+    document.querySelector(".firstH2").innerHTML = continent2018 + "";
+    document.querySelector("P").innerHTML = "Emission absolute of " + continentName + " in 2018";
+    document.querySelector(".secondH2").innerHTML = runden(continent2018/everything2018 *100)+ "";
+    document.querySelector(".thirdH2").innerHTML = runden((continent2018 - continent2008) / continent2008 * 100) + "";
+    document.querySelector(".fourthH2").innerHTML = runden(continent2018 - continent2008) + "";
+    document.querySelector(".chart").setAttribute("style", "height:" + runden(continent2018/everything2018 *100) + "%");
+}
+
+
+
+
+document.querySelector(".europe").addEventListener("click", function() {
+    
+    emission(countryEurope, Europe2018, Europe2008)
+});
+
+document.querySelector(".northamerica").addEventListener("click", function() {emission(countryNorhAmerica, NorthAmerica2018, NorthAmerica2008)});
+document.querySelector(".southamerica").addEventListener("click", function() {emission(countrySouthAmerica, SouthAmerica2018, SouthAmerica2008)});
+document.querySelector(".africa").addEventListener("click", function() {emission(countryAfrica, Africa2018, Africa2008)});
+document.querySelector(".asia").addEventListener("click", function() {emission(countryAsia, Asia2018, Asia2008)});
+document.querySelector(".australia").addEventListener("click", function() {emission(countryAustralia, Australia2018, Australia2008)});
+
+}
+
+
+
 
 
 /*
-var Europaa: HTMLElement = document.querySelector(".europe");
-
-Europaa.addEventListener("click", function() {
-    console.log("lol");
-
-
-
-
-});
-*/
-
-
 //Europa//
 function Europe() {
 
@@ -158,3 +176,11 @@ function titleAustralia() {
 
 
 document.querySelector(".australia").addEventListener("click", titleAustralia);
+*/
+
+
+
+
+
+
+

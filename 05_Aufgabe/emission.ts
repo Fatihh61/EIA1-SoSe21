@@ -1,3 +1,6 @@
+namespace Aufgabe5 {
+
+
 function aufrunden(zahl: number): number {
     return Math.round(zahl * 100) / 100
 
@@ -60,3 +63,4 @@ console.log("2018 im Vergleich zu 2008 sind das " + aufrunden(Australia2018 - Au
 console.log("Relativ zur Gesamtemission der Welt verursacht " + countryAustralia + " damit " + aufrunden(Australia2018 / everything2018 *100) + "%");
 
 
+}
