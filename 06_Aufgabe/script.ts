@@ -45,8 +45,8 @@ function emission(continentName: string, continent2018: number, continent2008: n
     document.querySelector("#titleRegion").innerHTML = continentName;
     document.querySelector(".firstH2").innerHTML = continent2018 + "";
     document.querySelector("P").innerHTML = "Emission absolute of " + continentName + " in 2018";
-    document.querySelector(".secondH2").innerHTML = runden(continent2018/everything2018 *100)+ "";
-    document.querySelector(".thirdH2").innerHTML = runden((continent2018 - continent2008) / continent2008 * 100) + "";
+    document.querySelector(".secondH2").innerHTML = runden(continent2018/everything2018 *100)+ "%";
+    document.querySelector(".thirdH2").innerHTML = runden((continent2018 - continent2008) / continent2008 * 100) + "%";
     document.querySelector(".fourthH2").innerHTML = runden(continent2018 - continent2008) + "";
     document.querySelector(".chart").setAttribute("style", "height:" + runden(continent2018/everything2018 *100) + "%");
 }
