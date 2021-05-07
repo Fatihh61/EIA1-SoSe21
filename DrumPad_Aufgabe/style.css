@@ -1,0 +1,213 @@
+body{
+
+    background-color: #000000;
+
+
+}
+
+
+#wrapper{
+
+    position: relative;
+    margin: auto;
+    height: 500px;
+    width: 500px;
+    
+
+
+
+
+}
+
+
+#btn1{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #4169E1;
+    margin-top: 20px;
+    border-radius: 15px 15px 15px 15px;
+   
+    
+
+}
+
+#btn1:hover{
+
+    background-color: #00FFFF;
+    transform: scale(1.1);
+}
+
+
+
+#btn2{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #4169E1;
+    margin-top: 20px;
+    margin-left: 155px;
+    border-radius: 15px 15px 15px 15px;
+    
+
+}
+
+#btn2:hover{
+
+    background-color: #00FFFF;
+    transform: scale(1.1);
+}
+
+
+#btn3{
+    position: absolute; 
+    width: 150px;
+    height: 150px;
+    background-color: #4169E1;
+    margin-top: 20px;
+    margin-left: 310px;
+    border-radius: 15px 15px 15px 15px;
+   
+
+}
+
+#btn3:hover{
+
+    background-color: #00FFFF;
+    transform: scale(1.1);
+}
+
+
+#btn4{
+    position: absolute; 
+    width: 150px;
+    height: 150px;
+    background-color: #CD919E;
+    margin-top: 175px;
+    border-radius: 15px 15px 15px 15px;
+   
+
+}
+
+#btn4:hover{
+
+    background-color: #00FFFF;
+    transform: scale(1.1);
+}
+
+#btn5{
+    position: absolute; 
+    width: 150px;
+    height: 150px;
+    background-color: #CD919E;
+    margin-top: 175px;
+    margin-left: 155px;
+    border-radius: 15px 15px 15px 15px;
+    
+
+}
+
+
+#btn5:hover{
+
+    background-color: #00FFFF;
+    transform: scale(1.1);
+}
+
+#btn6{
+    position: absolute; 
+    width: 150px;
+    height: 150px;
+    background-color: #CD919E;
+    margin-top: 175px;
+    margin-left: 310px;
+    border-radius: 15px 15px 15px 15px;
+    
+
+}
+
+#btn6:hover{
+
+    background-color: #00FFFF;
+    transform: scale(1.1);
+}
+
+#btn7{
+    position: absolute; 
+    width: 150px;
+    height: 150px;
+    background-color: #CD919E;
+    margin-top: 330px;
+    border-radius: 15px 15px 15px 15px;
+    
+    
+   
+
+}
+
+#btn7:hover{
+
+    background-color: #00FFFF;
+    transform: scale(1.1);
+}
+
+
+#btn8{
+    position: absolute; 
+    width: 150px;
+    height: 150px;
+    background-color: #FF8C00;
+    margin-top: 330px;
+    margin-left: 155px;
+    border-radius: 15px 15px 15px 15px;
+   
+   
+
+}
+
+
+#btn8:hover{
+
+    background-color: #00FFFF;
+    transform: scale(1.1);
+}
+
+
+#btn9{
+    position: absolute; 
+    width: 150px;
+    height: 150px;
+    background-color: #FF8C00;
+    margin-top: 330px;
+    margin-left: 310px;
+    border-radius: 15px 15px 15px 15px;
+    
+    
+    
+   
+
+}
+
+
+#btn9:hover{
+
+    background-color: #00FFFF;
+    transform: scale(1.1);
+
+}
+
+
+
+
+img{
+    position: absolute; 
+    width: 100px;
+    height: 100px;
+    background-color: #000000;
+    margin-top: 490px;
+    margin-left: 180px;
+    text-align: center;
+    border-radius: 15px 15px 15px 15px;
+    
+
+}
