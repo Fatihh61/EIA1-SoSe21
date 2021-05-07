@@ -23,12 +23,22 @@ document.querySelector('#btn6').addEventListener('click', function() {playSample
 document.querySelector('#btn7').addEventListener('click', function() {playSample(sample[6])});
 document.querySelector('#btn8').addEventListener('click', function() {playSample(sample[7])});
 document.querySelector('#btn9').addEventListener('click', function() {playSample(sample[8])});
-
-document.querySelector("#btn10").addEventListener("click", function () {setInterval (function () {
+var interval: number;
+document.querySelector("#btn10").addEventListener("click", function () {interval = setInterval (function () {
 
     beat[indexzaehler].play()
 
     indexzaehler = indexzaehler + 1;
+
+    if (indexzaehler>=3)
+
+    { 
+        clearInterval (interval)
+
+        indexzaehler = 0
+
+    }
+
 
 
 }, 1500);
@@ -51,10 +61,10 @@ var snare: HTMLAudioElement = new Audio("assets/musik/snare.mp3");
 
 
 
-document.querySelector(".Button1").addEventListener("click", function () { playSample(AMP3) });
+document.querySelector("#btn1").addEventListener("click", function () { playSample(AMP3) });
 
-document.querySelector(".Button2").addEventListener("click", function () { playSample(CMP3) });
-document.querySelector(".Button3").addEventListener("click", function () { playSample(FMP3) });
+document.querySelector("#btn2").addEventListener("click", function () { playSample(CMP3) });
+document.querySelector("#btn3").addEventListener("click", function () { playSample(FMP3) });
 document.querySelector(".Button4").addEventListener("click", function () { playSample(GMP3) });
 document.querySelector(".Button5").addEventListener("click", function () { playSample(hihat) });
 document.querySelector(".Button6").addEventListener("click", function () { playSample(kick) });
