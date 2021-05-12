@@ -1,4 +1,4 @@
-
+/*
 
 var indexzaehler = 0;
 
@@ -43,7 +43,7 @@ document.querySelector("#btn10").addEventListener("click", function () {interval
 
 }, 1500);
 });
-
+*/
 
 
 

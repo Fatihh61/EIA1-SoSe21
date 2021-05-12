@@ -196,3 +196,363 @@ var myParentDiv = document.getElementById("content");   (so heißt die ID in HTM
 
 myParentDiv.appendChild(myDiv)
 */
+
+
+/*Arrays
+
+var sample: HTMLAudioElement[] = [new Audio("assets/musik/A.mp3"), new Audio("assets/musik/C.mp3"), new Audio("assets/musik/F.mp3"), new Audio("assets/musik/G.mp3"), new Audio("assets/musik/hihat.mp3"), new Audio("assets/musik/kick.mp3"), new Audio("assets/musik/laugh-1.mp3"), new Audio("assets/musik/laugh-2.mp3"), new Audio("assets/musik/snare.mp3")];
+
+var beat: HTMLAudioElement[] = [sample[5], sample[8], sample[4]];
+
+document.querySelector('#btn1').addEventListener('click', function() {playSample(sample[0])});
+
+function playSample(musik: HTMLAudioElement) {
+
+    
+	musik.play() 
+
+
+};
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*If Bedingungen und Operatoren
+
+var hallo1: string = "Hello";
+var hallo2: string = "Hello";
+var hallo3: number = 5;
+var hallo4: number = 7;
+
+
+if (hallo1 == hallo2) {
+
+	console.log("hallo1 ist gleich hallo2")
+
+
+}
+
+if (hallo1 != hallo2) {
+
+	console.log("hallo1 ist nicht gleich hallo2")
+
+
+}
+
+if (hallo1 > hallo2) {
+
+	console.log("hallo1 ist größer als hallo2")
+
+
+}
+
+
+if (hallo1 < hallo2) {
+
+	console.log("hallo1 ist kleiner als hallo2")
+
+
+}
+
+if (hallo1 >= hallo2) {
+
+	console.log("hallo1 ist größer gleich als hallo2")
+
+
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+/*If Bedingungen mit logischen Operatoren
+var hallo1: string = "Hello";
+var hallo2: string = "Hello";
+var hallo3: number = 5;
+var hallo4: number = 7;
+
+
+
+if (hallo3 < hallo4 && hallo3 == 5) {
+
+	console.log("hallo3 ist kleiner als hallo4 und hallo3 ist gleich 5")
+
+
+}
+
+
+if (hallo3 > 1 || hallo4 == 2) {
+
+	console.log("hallo3 ist größer als 1 oder hallo4 ist gleich 2")
+
+
+}
+
+
+if (hallo3 !== hallo4) {
+
+	console.log("hallo3 ist nicht gleich hallo4 also ist es wahr?")
+
+
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*If else und If - else If - else
+var hallo1: string = "Hello";
+var hallo2: string = "Hello";
+var hallo3: number = 5;
+var hallo4: number = 7;
+
+if (hallo3 == hallo4) {
+
+	console.log("hallo3 ist gleich hallo4")
+
+}
+
+else {
+
+	console.log("hallo3 ist nicht gleich hallo4")
+
+}
+
+
+
+
+if (hallo3 > 10){
+
+	console.log("hallo3 ist kleiner als 10")
+
+}
+
+else if(hallo3 == 10){
+
+	console.log("hallo3 ist gleich 10")
+
+
+}
+
+else{
+
+	console.log("hallo3 ist weder kleiner als 10 noch gleich 10")
+
+}
+*/
+
+
+
+
+
+
+
+
+/* Switch case
+var hallo1: string = "Hello";
+var hallo2: string = "Hello";
+var hallo3: number = 5;
+var hallo4: number = 7;
+
+
+switch (hallo3) {
+
+	case 2:
+		console.log("hallo3 ist A")
+		break;
+
+	case 4:
+		console.log("hallo3 ist B")
+		break;
+
+	case 5:
+		console.log("hallo3 ist C")
+		break;
+
+	default:
+		console.log("hallo3 ist was anderes")
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* If Bedingung mit DOM-Manipulation
+var hallo1: string = "Hello";
+var hallo2: string = "Hello";
+var hallo3: number = 5;
+var hallo4: number = 7;
+
+var btn1: HTMLElement = document.querySelector("#btn1");
+
+
+function hello() {
+	if (btn1.getAttribute("class") == "class1") {
+
+		btn1.setAttribute("class", "class2");
+
+	} else {
+
+		btn1.setAttribute("class", "classgeben");
+
+
+	}
+};
+
+
+
+
+
+btn1.addEventListener("click", function () {
+
+
+
+	if (btn1.getAttribute("id") == "class1") {
+
+		btn1.setAttribute("id", "");
+
+	} else {
+
+		btn1.setAttribute("id", "class1");
+
+
+	}
+});
+*/
+
+
+
+
+
+
+
+/*while-Schleife und do-schleife
+var pinguin1: number = 0;
+var pinguintotal: number = 5;
+
+while (pinguin1 <= pinguintotal) {
+
+	console.log("Hallo, ich bin Pinguin Nummer " + pinguin1);
+	pinguin1++;
+
+
+
+};
+
+
+
+
+
+do {
+
+	console.log("Hallo, ich bin Pinguin Nummer " +pinguin1)
+	pinguin1++;
+}
+
+
+while (pinguin1 <= pinguintotal) 
+*/
+
+
+
+
+/*
+var penguinNumber: number = 8;
+
+for (var index = 0; index <=penguinNumber; index++) {
+
+	console.log("Hallo, ich bin Pinguin Nummer " + index);
+
+}
+
+
+for (var index2 = 1; index2 <= penguinNumber; index2++){
+
+	document.querySelector("#btn" + index2).innerHTML = "Index ist" + index2;
+
+
+}
+
+
+
+
+var myArray: string [] = ["Hans", "Peter", "Ralf"];
+
+
+for  (var index3: number = 0; index3 <= 2; index3++) {
+
+	console.log(myArray[index3])
+	
+
+
+}
+*/
+
+
+
+
+
+
+
+
+/*For-Schleife
+var myArray: string [] = ["Hans", "Peter", "Ralf"];
+
+
+for  (var index3: number = 0; index3 <= 2; index3++) {
+
+	if (myArray[index3] == "Peter") {
+
+		console.log(index3)
+
+
+	}
+	
+
+
+}
+*/
+
+
+
+
+
+
+
+
