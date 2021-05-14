@@ -154,7 +154,7 @@ body {
     position: absolute;
     font-size: 100px;
     margin-top: 490px;
-    margin-left: 350px;
+    margin-left: 40px;
     text-align: center;
     border-radius: 15px 15px 15px 15px;
 }
@@ -164,6 +164,15 @@ body {
     font-size: 50px;
     margin-top: 510px;
     margin-left: 210px;
+    text-align: center;
+    border-radius: 15px 15px 15px 15px;
+}
+
+#btn13 {
+    position: absolute;
+    font-size: 100px;
+    margin-top: 490px;
+    margin-left: 350px;
     text-align: center;
     border-radius: 15px 15px 15px 15px;
 }

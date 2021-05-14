@@ -440,4 +440,25 @@ for  (var index3: number = 0; index3 <= 2; index3++) {
 
 }
 */
+/* SetInterval in einer for Schleife
+for (var indexzaehler: number = 0; indexzaehler <= 3 ; indexzaehler++) {
+    setInterval(function() {
+        beat[indexzaehler].play();
+
+    }, 1500);
+    */
+/*
+var min: number = 1;
+var max: number = 10;
+
+var remixbtnn: HTMLElement = document.getElementById("demo");
+remixbtnn.addEventListener("click", function () {
+getRndInteger(min, max);
+});
+
+function getRndInteger(min, max) {
+return Math.floor(Math.random() * (max - min + 1)) + min;
+
+} console.log(getRndInteger);
+*/ 
 //# sourceMappingURL=script.js.map

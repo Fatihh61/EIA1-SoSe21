@@ -1,4 +1,4 @@
-/*
+namespace Aufgabe7 { 
 
 var indexzaehler = 0;
 
@@ -43,9 +43,9 @@ document.querySelector("#btn10").addEventListener("click", function () {interval
 
 }, 1500);
 });
-*/
 
 
+}
 
 /*
 var AMP3: HTMLAudioElement = new Audio("assets/musik/A.mp3");
