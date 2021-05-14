@@ -1,5 +1,5 @@
-8;
-{
+var Aufgabe8;
+(function (Aufgabe8) {
     // Indexzähler als Array für meinen Beat
     var indexzaehler = 0;
     // Alle Audioelemente als Variable deklariert
@@ -61,58 +61,38 @@
             document.querySelector("#btn11").classList.add("hidden");
         }
     });
-    var min = 1;
-    var max = 10;
+    /*
+    var min: number = 1;
+    var max: number = 9;
+    */
     // Remix-Button
     var remixbtn = document.getElementById("remixbtn");
     remixbtn.addEventListener("click", function () {
         beat.length = 0;
         console.log(beat);
-        if (beat.length == 0) {
-            random(min, max);
-            console.log(random(min, max));
-            beat.push;
+        while (beat.length < 3) {
+            var r = sample[Math.floor(Math.random() * sample.length)];
+            if (beat.indexOf(r) === -1)
+                beat.push(r);
+            console.log(beat);
         }
+        /* random funkt nicht
+        do { random(1, 9);
+        console.log(random(1, 9));
+        } while (beat.length <= 3 );
+        */
     });
+    /* random funkt nicht
     function random(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+        
+        do { return Math.floor(Math.random() * (max - min + 1)) + min;
+           } while (beat.push(sample[5], sample[8], sample[4]));
+               
+           
+        
+        
+    
     }
-}
-/*
-   var interval: number;
-   interval =
-               if (indexzaehler >= 3) {
-                   clearInterval(interval)
-       
-                   indexzaehler = 0
-       
-               }
-       
-       */
-/* for (indexzaehler; indexzaehler > 4;) {
-
-            beat[indexzaehler].play();
-
-
-
-
-
-}
-*/
-/*
-while (playButtonIsHidden,playBeat,IfStopButtonIsHiddenSetIntervalBZWReset) {
-            
-}
-*/
-/* //true versuch but fail
-var lel1: boolean = true;
-
-
-if (lel1 = true) {
-
-
-
-
-}
-*/ 
+    */
+})(Aufgabe8 || (Aufgabe8 = {}));
 //# sourceMappingURL=script.js.map
