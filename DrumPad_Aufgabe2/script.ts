@@ -55,7 +55,7 @@ namespace Aufgabe8 {
 
             });
 
-        }, 1000);
+        },                       300);
         console.log(beat[indexzaehler]);
 
 
@@ -94,8 +94,7 @@ namespace Aufgabe8 {
 
         document.querySelector("#btn11").classList.add("hidden");
         document.querySelector("#btn10").classList.remove("hidden");
-        /*beat.length = 0;
-        console.log(beat);*/
+        
     });
 
 
@@ -113,10 +112,7 @@ namespace Aufgabe8 {
         }
     });
 
-    /*
-    var min: number = 1;
-    var max: number = 9;
-    */
+   
 
 
 
@@ -138,11 +134,7 @@ namespace Aufgabe8 {
 
 
 
-        /* random funkt nicht
-        do { random(1, 9);
-        console.log(random(1, 9));
-        } while (beat.length <= 3 );
-        */
+      
 
 
 

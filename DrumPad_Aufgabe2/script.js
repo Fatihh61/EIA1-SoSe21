@@ -19,8 +19,9 @@ var Aufgabe8;
     document.querySelector("#btn7").addEventListener("click", function () { playSample(sample[6]); });
     document.querySelector("#btn8").addEventListener("click", function () { playSample(sample[7]); });
     document.querySelector("#btn9").addEventListener("click", function () { playSample(sample[8]); });
+    var myInterval;
     document.querySelector("#btn10").addEventListener("click", function () {
-        var myInterval = setInterval(function () {
+        myInterval = setInterval(function () {
             // Beat wird wiederholt
             beat[indexzaehler].play();
             indexzaehler++;
@@ -31,7 +32,7 @@ var Aufgabe8;
                 clearInterval(myInterval);
                 indexzaehler = 0;
             });
-        }, 1000);
+        }, 300);
         console.log(beat[indexzaehler]);
     });
     // Toggle Funktion Play-Button
@@ -48,12 +49,11 @@ var Aufgabe8;
     stopbtn.addEventListener("click", function () {
         document.querySelector("#btn11").classList.add("hidden");
         document.querySelector("#btn10").classList.remove("hidden");
-        /*beat.length = 0;
-        console.log(beat);*/
     });
     // Delete-button
     var deletebtn = document.getElementById("deletebtn");
     deletebtn.addEventListener("click", function () {
+        clearInterval(myInterval);
         beat.length = 0;
         console.log(deletebtn);
         if (beat.length == 0) {
@@ -61,38 +61,17 @@ var Aufgabe8;
             document.querySelector("#btn11").classList.add("hidden");
         }
     });
-    /*
-    var min: number = 1;
-    var max: number = 9;
-    */
     // Remix-Button
     var remixbtn = document.getElementById("remixbtn");
     remixbtn.addEventListener("click", function () {
         beat.length = 0;
         console.log(beat);
         while (beat.length < 3) {
-            var r = sample[Math.floor(Math.random() * sample.length)];
-            if (beat.indexOf(r) === -1)
-                beat.push(r);
+            var audioElement = sample[Math.floor(Math.random() * sample.length)];
+            if (beat.indexOf(audioElement) === -1)
+                beat.push(audioElement);
             console.log(beat);
         }
-        /* random funkt nicht
-        do { random(1, 9);
-        console.log(random(1, 9));
-        } while (beat.length <= 3 );
-        */
     });
-    /* random funkt nicht
-    function random(min, max) {
-        
-        do { return Math.floor(Math.random() * (max - min + 1)) + min;
-           } while (beat.push(sample[5], sample[8], sample[4]));
-               
-           
-        
-        
-    
-    }
-    */
 })(Aufgabe8 || (Aufgabe8 = {}));
 //# sourceMappingURL=script.js.map
