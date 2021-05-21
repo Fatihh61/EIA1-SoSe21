@@ -1,0 +1,12 @@
+
+#Aufgabenblock {
+    width: 200px;
+    height: 20px;
+    background-color: white;
+    position: absolute;
+    margin-left: 150px;
+    border: 1px solid black;
+    font-size: 10pt;
+    
+    
+}

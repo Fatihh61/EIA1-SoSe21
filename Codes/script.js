@@ -392,7 +392,7 @@ do {
 
 while (pinguin1 <= pinguintotal)
 */
-/*
+/* for Schleife
 var penguinNumber: number = 8;
 
 for (var index = 0; index <=penguinNumber; index++) {
@@ -460,5 +460,79 @@ function getRndInteger(min, max) {
 return Math.floor(Math.random() * (max - min + 1)) + min;
 
 } console.log(getRndInteger);
-*/ 
+*/
+/*Objekt in einer Variable
+var objName: any = {
+
+key1: "Hallo",
+key2: 123,
+key3: true,
+key4: [1, 2, 3]
+}
+console.log(objName.key2);
+*/
+/*Objekte und Interfaces
+interface Animal {
+
+name: string;
+age: number;
+food: string[];
+placeOfBirth: string;
+}
+
+var penguin: Animal = {
+
+name: "Pinguin",
+age: 18,
+food: ["Banane", "Apfel", "Mandarine"],
+placeOfBirth: "Stuttgart"
+};
+
+console.log(penguin.name);
+penguin.age++;
+penguin.placeOfBirth = "Karlsruhe";
+*/
+/*Interface in Kombination mit einem Array und einer for Schleife
+interface Person {
+
+name: string;
+age: number;
+
+}
+
+var person: Person[] = [
+{
+name: "Peter",
+age: 5
+},
+{
+name: "Michael",
+age: 20
+}
+
+
+];
+
+for (let index: number = 0; index < person.length; index++) {
+console.log(person[index].name);
+}
+*/
+/*Aufgabe 1 klappt nicht, wieso?
+var num: number = 1;
+var num2: number = 2;
+var temp: number = 0;
+
+
+function numSwap(num3: number, num4: number, tempo: number): void {
+num3 = 1;
+num4 = 2;
+tempo = 0;
+
+num3 = tempo;
+num4 = num3;
+tempo = num4;
+
+console.log(numSwap(num3, num4, tempo));
+}
+*/
 //# sourceMappingURL=script.js.map
