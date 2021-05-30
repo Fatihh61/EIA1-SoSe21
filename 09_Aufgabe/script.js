@@ -2,6 +2,7 @@ var Aufgabe9;
 (function (Aufgabe9) {
     var h2 = document.querySelector("h2");
     var indexzaehler = 1;
+    var indexzaehler2 = 0;
     var input = document.querySelector("#input");
     input.addEventListener("keypress", function (event) {
         if (event.key == "Enter") {
@@ -9,7 +10,7 @@ var Aufgabe9;
             div2.className = "Aufgabenblock";
             document.querySelector(".furtherTasks").appendChild(div2);
             indexzaehler++;
-            document.querySelector("h2").innerHTML = indexzaehler + " in total";
+            document.querySelector("#inTotal").innerHTML = indexzaehler + " in total";
             var i1_1 = document.createElement("i");
             i1_1.className = "far fa-circle notChecked";
             var i2_1 = document.createElement("i");
@@ -74,10 +75,14 @@ var Aufgabe9;
     notChecked.addEventListener("click", function () {
         document.querySelector("#notChecked").classList.add("isHidden");
         document.querySelector("#checked").classList.remove("isHidden");
+        indexzaehler2++;
+        document.querySelector("#open").innerHTML = indexzaehler2 + " open";
     });
     checked.addEventListener("click", function () {
         document.querySelector("#checked").classList.add("isHidden");
         document.querySelector("#notChecked").classList.remove("isHidden");
+        indexzaehler2--;
+        document.querySelector("#open").innerHTML = indexzaehler2 + " open";
     });
     /*
     document.querySelector("#btn").addEventListener("click", function(): void {
