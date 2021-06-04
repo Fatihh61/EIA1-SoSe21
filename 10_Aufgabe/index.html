@@ -7,13 +7,18 @@
     <title>ToDo App</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="artyom.window.min.js"></script>
+    <script src="script.js" async></script>
 </head>
 <body>
     <main>
         <h1>ToDo App</h1>
         <p id="counter">3 in total</p>
-
+        <p id="counterOpen">0 open</p>
+        <p id="counterDone">0 done</p>
+        <button id="voicebutton">Sage: erstelle Aufgabe ‘Einkaufen gehen’</button>
+        <br>
+        <br>
         <div class="inputGroup">
             <input type="text" id="inputTodo" placeholder="Add another task">
             <button id="addButton"><i class="fas fa-plus-circle"></i></button>
