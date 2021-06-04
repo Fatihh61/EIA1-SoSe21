@@ -5,7 +5,7 @@ namespace Aufgabe10 {
 
 
 
-
+    //Mein Interface//
     interface toDoObject {
 
         todosText: string;
@@ -39,6 +39,7 @@ namespace Aufgabe10 {
         drawListToDOM();
     });
 
+    //Meine Hauptfunktion, bei der ein Task hinzugefügt wird//
     function drawListToDOM(): void {
 
         todosDOMElement.innerHTML = "";
@@ -75,6 +76,12 @@ namespace Aufgabe10 {
         doneCounter();
     }
 
+
+
+
+
+
+    //Anzahl an Task wird angezeigt//
     function updateCounter(): void {
         counterDOMElement.innerHTML = myArray.length + " in total";
     }
@@ -85,7 +92,7 @@ namespace Aufgabe10 {
 
 
 
-
+    //Anzahl offener Tasks wird angezeigt//
     function openCounter(): void {
         var indexzaehleropen: number = 0;
         for (let index: number = 0; index < myArray.length; index++) {
@@ -96,28 +103,33 @@ namespace Aufgabe10 {
             }
 
         }
-
+        open.innerHTML = indexzaehleropen + " open";
 
     }
 
-
+    //Anzahl fertiger Tasks wird angezeigt//
     function doneCounter(): void {
         var indexzaehlerdone: number = 0;
         for (let index: number = 0; index < myArray.length; index++) {
             if (myArray[index].todosChecked == true) {
                 indexzaehlerdone++;
-                done.innerHTML = indexzaehlerdone + " done";
+                
+                console.log(myArray);
+                
+                
+                
 
 
             }
 
         }
-
+        done.innerHTML = indexzaehlerdone + " done";
+        
 
 
     }
 
-
+    //Aus dem Interface wird abgegriffen und der Text zum Task eingefügt//
     function addTodo(): void {
 
         if (inputDOMElement.value != "") {
@@ -139,6 +151,8 @@ namespace Aufgabe10 {
         }
     }
 
+
+    //Check Kreis wird getoggled//
     function toggleCheckState(index: number): void {
 
 
@@ -148,7 +162,7 @@ namespace Aufgabe10 {
         drawListToDOM();
     }
 
-
+    //Task wird gelöscht bei Klick auf Trash//
     function deleteTodo(index: number): void {
 
         myArray.splice(index, 1);
@@ -158,6 +172,8 @@ namespace Aufgabe10 {
     }
 
 
+
+    
     var voicebutton: HTMLElement = document.querySelector("#voicebutton");
 
 

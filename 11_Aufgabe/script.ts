@@ -16,6 +16,22 @@ window.addEventListener("load", function(): void {
         }
     });
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     function startContinuousArtyom(): void {
         artyom.fatality();
     

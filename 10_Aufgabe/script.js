@@ -13,6 +13,7 @@ var Aufgabe10;
         addButtonDOMElement.addEventListener("click", addTodo);
         drawListToDOM();
     });
+    //Meine Hauptfunktion, bei der ein Task hinzugefügt wird//
     function drawListToDOM() {
         todosDOMElement.innerHTML = "";
         var _loop_1 = function (index) {
@@ -36,11 +37,13 @@ var Aufgabe10;
         openCounter();
         doneCounter();
     }
+    //Anzahl an Task wird angezeigt//
     function updateCounter() {
         counterDOMElement.innerHTML = myArray.length + " in total";
     }
     var open = document.querySelector("#counterOpen");
     var done = document.querySelector("#counterDone");
+    //Anzahl offener Tasks wird angezeigt//
     function openCounter() {
         var indexzaehleropen = 0;
         for (var index = 0; index < myArray.length; index++) {
@@ -49,16 +52,20 @@ var Aufgabe10;
                 open.innerHTML = indexzaehleropen + " open";
             }
         }
+        open.innerHTML = indexzaehleropen + " open";
     }
+    //Anzahl fertiger Tasks wird angezeigt//
     function doneCounter() {
         var indexzaehlerdone = 0;
         for (var index = 0; index < myArray.length; index++) {
             if (myArray[index].todosChecked == true) {
                 indexzaehlerdone++;
-                done.innerHTML = indexzaehlerdone + " done";
+                console.log(myArray);
             }
         }
+        done.innerHTML = indexzaehlerdone + " done";
     }
+    //Aus dem Interface wird abgegriffen und der Text zum Task eingefügt//
     function addTodo() {
         if (inputDOMElement.value != "") {
             myArray.unshift({
@@ -69,10 +76,12 @@ var Aufgabe10;
             drawListToDOM();
         }
     }
+    //Check Kreis wird getoggled//
     function toggleCheckState(index) {
         myArray[index].todosChecked = !myArray[index].todosChecked;
         drawListToDOM();
     }
+    //Task wird gelöscht bei Klick auf Trash//
     function deleteTodo(index) {
         myArray.splice(index, 1);
         drawListToDOM();
