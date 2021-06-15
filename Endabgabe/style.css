@@ -1,0 +1,160 @@
+#Hintergrund {
+    position: absolute;
+    opacity: 0.5;
+}
+
+#Zeichen {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    margin-left: 1150px;
+    margin-top: 20px;
+}
+
+#container {
+    position: relative;
+    margin: 0 auto;
+    width: 500px;
+    height: 350px;
+    top: 100px;
+}
+
+#Punktestand {
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 10px;
+    font-size: 15pt;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#Schwierigkeitsgrad {
+    position: absolute;
+    margin-left: 750px;
+    top: 0%;
+    font-size: 15pt;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+ul {
+    float: left;
+    display: flex;
+}
+
+span {
+    margin: 5px;
+}
+
+#Start {
+    position: absolute;
+    margin-top: 250px;
+    margin-left: 150px;
+    background-color: cornflowerblue;
+    width: 95px;
+    height: 30px;
+    text-align: center;
+    border-radius: 10px 10px 10px 10px;
+    border: 1px solid gold;
+    font-size: 20pt;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+/* Container Alternative für die Platzierung des Spielfeldes
+#container {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+}
+*/
+
+#Kreuz {
+    font-size: 75pt;
+    background-color: white;
+    justify-content: center;
+    display: flex;
+}
+
+.fas {
+    font-size: 75pt;
+    background-color: white;
+    justify-content: center;
+    display: grid;
+}
+
+#btn1 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+}
+
+#btn2 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    left: 110px;
+}
+
+#btn3 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    left: 220px;
+}
+
+#btn4 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    top: 110px;
+}
+
+#btn5 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    top: 110px;
+    left: 110px;
+}
+
+#btn6 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    top: 110px;
+    left: 220px;
+}
+
+#btn7 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    top: 220px;
+}
+
+#btn8 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    top: 220px;
+    left: 110px;
+}
+
+#btn9 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    top: 220px;
+    left: 220px;
+}
