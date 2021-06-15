@@ -1,28 +1,48 @@
 var Endabgabe;
 (function (Endabgabe) {
-    var Button1 = document.getElementById("btn1");
-    var Button2 = document.getElementById("btn2");
-    var Button3 = document.getElementById("btn3");
-    var Button4 = document.getElementById("btn4");
-    var Button5 = document.getElementById("btn5");
-    var Button6 = document.getElementById("btn6");
-    var Button7 = document.getElementById("btn7");
-    var Button8 = document.getElementById("btn8");
-    var Button9 = document.getElementById("btn9");
+    //Felder 1-9 wurden definiert//
+    var button1 = document.getElementById("btn1");
+    var button2 = document.getElementById("btn2");
+    var button3 = document.getElementById("btn3");
+    var button4 = document.getElementById("btn4");
+    var button5 = document.getElementById("btn5");
+    var button6 = document.getElementById("btn6");
+    var button7 = document.getElementById("btn7");
+    var button8 = document.getElementById("btn8");
+    var button9 = document.getElementById("btn9");
+    //Felder 1-9 wurden definiert//
+    //Array mit allen Feldern 1-9 wurde definiert//
+    var myArrayButtons = [button1, button2, button3, button4, button5, button6, button7, button8, button9];
+    //Array mit allen Feldern 1-9 wurde definiert//
+    //Start Button wurde definiert//
+    var startButton = document.getElementById("Start");
+    //Start Button wurde definiert//
+    //Indexzähler wurden definiert//
+    var indexzaehler = 0;
+    //Indexzähler wurden definiert//
+    //Funktion Kreuz in Felder 1-9 setzen, bei Klick auf auf eines der Felder//
     function fontSetzen(button) {
         var iKreuz = document.createElement("i");
         iKreuz.className = "fas fa-times";
         button.appendChild(iKreuz);
-        console.log(Button1);
     }
-    Button1.addEventListener("click", function () { fontSetzen(Button1); });
-    Button2.addEventListener("click", function () { fontSetzen(Button2); });
-    Button3.addEventListener("click", function () { fontSetzen(Button3); });
-    Button4.addEventListener("click", function () { fontSetzen(Button4); });
-    Button5.addEventListener("click", function () { fontSetzen(Button5); });
-    Button6.addEventListener("click", function () { fontSetzen(Button6); });
-    Button7.addEventListener("click", function () { fontSetzen(Button7); });
-    Button8.addEventListener("click", function () { fontSetzen(Button8); });
-    Button9.addEventListener("click", function () { fontSetzen(Button9); });
+    button1.addEventListener("click", function () { fontSetzen(button1); });
+    button2.addEventListener("click", function () { fontSetzen(button2); });
+    button3.addEventListener("click", function () { fontSetzen(button3); });
+    button4.addEventListener("click", function () { fontSetzen(button4); });
+    button5.addEventListener("click", function () { fontSetzen(button5); });
+    button6.addEventListener("click", function () { fontSetzen(button6); });
+    button7.addEventListener("click", function () { fontSetzen(button7); });
+    button8.addEventListener("click", function () { fontSetzen(button8); });
+    button9.addEventListener("click", function () { fontSetzen(button9); });
+    //Funktion Kreuz in Felder 1-9 setzen, bei Klick auf auf eines der Felder//
+    function startGame(button) {
+        var iKreis = document.createElement("i");
+        iKreis.className = "far fa-circle";
+        button.appendChild(iKreis);
+        button.setAttribute("boolean", "disabled");
+        console.log(button);
+    }
+    startButton.addEventListener("click", function () { startGame(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
 })(Endabgabe || (Endabgabe = {}));
 //# sourceMappingURL=script.js.map

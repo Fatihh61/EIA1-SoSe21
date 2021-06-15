@@ -84,6 +84,16 @@ span {
     display: grid;
 }
 
+.far {
+    font-size: 75pt;
+    background-color: white;
+    justify-content: center;
+    display: grid;
+}
+
+
+
+
 #btn1 {
     position: absolute;
     width: 100px;
