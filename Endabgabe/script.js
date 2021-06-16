@@ -21,27 +21,31 @@ var Endabgabe;
     var indexzaehler = 0;
     //Indexzähler wurden definiert//
     //Funktion Kreuz in Felder 1-9 setzen, bei Klick auf auf eines der Felder//
-    function fontSetzen(button) {
+    function SpielerZug(button) {
         var iKreuz = document.createElement("i");
         iKreuz.className = "fas fa-times";
         button.appendChild(iKreuz);
+        button.setAttribute("data-WerHatGedrückt", "Spieler");
+        console.log(button.getAttribute("data-WerHatGedrückt"));
     }
-    button1.addEventListener("click", function () { fontSetzen(button1); });
-    button2.addEventListener("click", function () { fontSetzen(button2); });
-    button3.addEventListener("click", function () { fontSetzen(button3); });
-    button4.addEventListener("click", function () { fontSetzen(button4); });
-    button5.addEventListener("click", function () { fontSetzen(button5); });
-    button6.addEventListener("click", function () { fontSetzen(button6); });
-    button7.addEventListener("click", function () { fontSetzen(button7); });
-    button8.addEventListener("click", function () { fontSetzen(button8); });
-    button9.addEventListener("click", function () { fontSetzen(button9); });
+    button1.addEventListener("click", function () { SpielerZug(button1); });
+    button2.addEventListener("click", function () { SpielerZug(button2); });
+    button3.addEventListener("click", function () { SpielerZug(button3); });
+    button4.addEventListener("click", function () { SpielerZug(button4); });
+    button5.addEventListener("click", function () { SpielerZug(button5); });
+    button6.addEventListener("click", function () { SpielerZug(button6); });
+    button7.addEventListener("click", function () { SpielerZug(button7); });
+    button8.addEventListener("click", function () { SpielerZug(button8); });
+    button9.addEventListener("click", function () { SpielerZug(button9); });
     //Funktion Kreuz in Felder 1-9 setzen, bei Klick auf auf eines der Felder//
     function startGame(button) {
         var iKreis = document.createElement("i");
         iKreis.className = "far fa-circle";
         button.appendChild(iKreis);
-        button.setAttribute("boolean", "disabled");
+        /* Disablen des Button
+        button.setAttribute("disabled", "true");
         console.log(button);
+        */
     }
     startButton.addEventListener("click", function () { startGame(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
 })(Endabgabe || (Endabgabe = {}));
