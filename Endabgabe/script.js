@@ -40,9 +40,7 @@ var Endabgabe;
         spielerArray.push(button);
         console.log(spielerArray);
         /*
-        console.log(spielerArray);
-        computerSetztKreis(button);
-        console.log(computerSetztKreis);
+        myArrayButtons.pop(button);
         */
     }
     button1.addEventListener("click", function () { SpielerZug(button1); });
@@ -88,6 +86,9 @@ var Endabgabe;
         */
         computerArray.push(button);
         console.log(computerArray);
+        /*
+        myArrayButtons.pop(button);
+        */
     }
     button1.addEventListener("click", function () { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
     button2.addEventListener("click", function () { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });

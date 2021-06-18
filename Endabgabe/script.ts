@@ -45,11 +45,8 @@ namespace Endabgabe {
         */
         spielerArray.push(button);
         console.log(spielerArray);
-        
         /*
-        console.log(spielerArray);
-        computerSetztKreis(button);
-        console.log(computerSetztKreis);
+        myArrayButtons.pop(button);
         */
 
     }
@@ -111,6 +108,9 @@ namespace Endabgabe {
         */
         computerArray.push(button);
         console.log(computerArray);
+        /*
+        myArrayButtons.pop(button);
+        */
 
 
 
