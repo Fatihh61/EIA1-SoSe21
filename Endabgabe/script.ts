@@ -32,6 +32,8 @@ namespace Endabgabe {
     //Funktion Kreuz in Felder 1-9 setzen, bei Klick auf eines der Felder (Spielerzug)//
     function SpielerZug(button: HTMLElement): void {
 
+        
+
         let iKreuz: HTMLElement = document.createElement("i");
         iKreuz.className = "fas fa-times";
         button.appendChild(iKreuz);
@@ -45,6 +47,10 @@ namespace Endabgabe {
         */
         spielerArray.push(button);
         console.log(spielerArray);
+        let indexOfButton: number = myArrayButtons.indexOf(button);
+        myArrayButtons.splice(indexOfButton, 1);
+        console.log(myArrayButtons);
+        computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]);
         /*
         myArrayButtons.pop(button);
         */
@@ -81,22 +87,35 @@ namespace Endabgabe {
         button.setAttribute("disabled", "true");
         */
         computerArray.push(button);
+        let indexOfButton: number = myArrayButtons.indexOf(button);
+        myArrayButtons.splice(indexOfButton, 1);
+        console.log(myArrayButtons);
+
         /*
         myArrayButtons.pop(button);
         */
-        console.log(computerArray);
-
+        /*
+         console.log(computerArray);
+         */
 
     }
 
     startButton.addEventListener("click", function (): void { startGame(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
-     //Bei Klick auf Start, fängt das Spiel an und Computer macht seinen Zug//
+    //Bei Klick auf Start, fängt das Spiel an und Computer macht seinen Zug//
 
 
 
 
     //Wenn Spieler Kreuz gesetzt hat, macht Computer seinen Zug und setzt Kreis//
     function computerZug(button: HTMLElement): void {
+
+        console.log("Hallo");
+
+        /* Methode 2---------------
+        if (myArrayButtons == true) {
+            
+        }
+        */
 
         let iKreis: HTMLElement = document.createElement("i");
         iKreis.className = "far fa-circle";
@@ -108,6 +127,21 @@ namespace Endabgabe {
         */
         computerArray.push(button);
         console.log(computerArray);
+
+        /* Methode3-------------
+        myArrayButtons.filter(function (value) {
+
+            return value == button;
+
+        });
+        */
+
+        let indexOfButton: number = myArrayButtons.indexOf(button);
+        myArrayButtons.splice(indexOfButton, 1);
+        console.log(myArrayButtons);
+        console.log(indexOfButton);
+
+
         /*
         myArrayButtons.pop(button);
         */
@@ -116,15 +150,7 @@ namespace Endabgabe {
 
     }
 
-    button1.addEventListener("click", function (): void { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
-    button2.addEventListener("click", function (): void { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
-    button3.addEventListener("click", function (): void { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
-    button4.addEventListener("click", function (): void { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
-    button5.addEventListener("click", function (): void { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
-    button6.addEventListener("click", function (): void { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
-    button7.addEventListener("click", function (): void { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
-    button8.addEventListener("click", function (): void { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
-    button9.addEventListener("click", function (): void { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
+
     //Wenn Spieler Kreuz gesetzt hat, macht Computer seinen Zug und setzt Kreis//
 
 

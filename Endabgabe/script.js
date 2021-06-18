@@ -39,6 +39,10 @@ var Endabgabe;
         */
         spielerArray.push(button);
         console.log(spielerArray);
+        var indexOfButton = myArrayButtons.indexOf(button);
+        myArrayButtons.splice(indexOfButton, 1);
+        console.log(myArrayButtons);
+        computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]);
         /*
         myArrayButtons.pop(button);
         */
@@ -67,15 +71,26 @@ var Endabgabe;
         button.setAttribute("disabled", "true");
         */
         computerArray.push(button);
+        var indexOfButton = myArrayButtons.indexOf(button);
+        myArrayButtons.splice(indexOfButton, 1);
+        console.log(myArrayButtons);
         /*
         myArrayButtons.pop(button);
         */
-        console.log(computerArray);
+        /*
+         console.log(computerArray);
+         */
     }
     startButton.addEventListener("click", function () { startGame(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
     //Bei Klick auf Start, fängt das Spiel an und Computer macht seinen Zug//
     //Wenn Spieler Kreuz gesetzt hat, macht Computer seinen Zug und setzt Kreis//
     function computerZug(button) {
+        console.log("Hallo");
+        /* Methode 2---------------
+        if (myArrayButtons == true) {
+            
+        }
+        */
         var iKreis = document.createElement("i");
         iKreis.className = "far fa-circle";
         button.appendChild(iKreis);
@@ -86,19 +101,21 @@ var Endabgabe;
         */
         computerArray.push(button);
         console.log(computerArray);
+        /* Methode3-------------
+        myArrayButtons.filter(function (value) {
+
+            return value == button;
+
+        });
+        */
+        var indexOfButton = myArrayButtons.indexOf(button);
+        myArrayButtons.splice(indexOfButton, 1);
+        console.log(myArrayButtons);
+        console.log(indexOfButton);
         /*
         myArrayButtons.pop(button);
         */
     }
-    button1.addEventListener("click", function () { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
-    button2.addEventListener("click", function () { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
-    button3.addEventListener("click", function () { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
-    button4.addEventListener("click", function () { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
-    button5.addEventListener("click", function () { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
-    button6.addEventListener("click", function () { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
-    button7.addEventListener("click", function () { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
-    button8.addEventListener("click", function () { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
-    button9.addEventListener("click", function () { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
     //Wenn Spieler Kreuz gesetzt hat, macht Computer seinen Zug und setzt Kreis//
 })(Endabgabe || (Endabgabe = {}));
 //# sourceMappingURL=script.js.map
