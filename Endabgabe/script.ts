@@ -12,31 +12,47 @@ namespace Endabgabe {
     var button9: HTMLElement = document.getElementById("btn9");
     //Felder 1-9 wurden definiert//
 
-    //Array mit allen Feldern 1-9 wurde definiert//
-    var myArrayButtons: HTMLElement [] = [button1, button2, button3, button4, button5, button6, button7, button8, button9];
-    //Array mit allen Feldern 1-9 wurde definiert//
+    //Arrays wurden definiert//
+    var myArrayButtons: HTMLElement[] = [button1, button2, button3, button4, button5, button6, button7, button8, button9];
+    var spielerArray: HTMLElement[] = [];
+    var computerArray: HTMLElement[] = [];
+    var spielerBoolean: boolean[] = [true, true, true, true, true, true, true, true, true];
+    var computerBoolean: boolean[] = [true, true, true, true, true, true, true, true, true];
+    //Arrays wurden definiert//
 
     //Start Button wurde definiert//
     var startButton: HTMLElement = document.getElementById("Start");
     //Start Button wurde definiert//
 
-    //Indexzähler wurden definiert//
+    //Indexzähler wurde definiert//
     var indexzaehler: number = 0;
-    //Indexzähler wurden definiert//
+    //Indexzähler wurde definiert//
 
 
-    //Funktion Kreuz in Felder 1-9 setzen, bei Klick auf auf eines der Felder//
+    //Funktion Kreuz in Felder 1-9 setzen, bei Klick auf eines der Felder (Spielerzug)//
     function SpielerZug(button: HTMLElement): void {
-        
+
         let iKreuz: HTMLElement = document.createElement("i");
         iKreuz.className = "fas fa-times";
         button.appendChild(iKreuz);
         button.setAttribute("data-WerHatGedrückt", "Spieler");
+        /*
         console.log(button.getAttribute("data-WerHatGedrückt"));
+        */
+        button.setAttribute("boolean", "false");
+        /*disablen des Button
+        button.setAttribute("disabled", "true");
+        */
+        spielerArray.push(button);
+        console.log(spielerArray);
         
+        /*
+        console.log(spielerArray);
+        computerSetztKreis(button);
+        console.log(computerSetztKreis);
+        */
 
     }
-
 
     button1.addEventListener("click", function (): void { SpielerZug(button1); });
     button2.addEventListener("click", function (): void { SpielerZug(button2); });
@@ -47,28 +63,70 @@ namespace Endabgabe {
     button7.addEventListener("click", function (): void { SpielerZug(button7); });
     button8.addEventListener("click", function (): void { SpielerZug(button8); });
     button9.addEventListener("click", function (): void { SpielerZug(button9); });
-    //Funktion Kreuz in Felder 1-9 setzen, bei Klick auf auf eines der Felder//
+    //Funktion Kreuz in Felder 1-9 setzen, bei Klick auf auf eines der Felder (Spielerzug)//
 
 
 
 
 
-
+    //Bei Klick auf Start, fängt das Spiel an und Computer macht seinen Zug//
     function startGame(button: HTMLElement): void {
 
         let iKreis: HTMLElement = document.createElement("i");
         iKreis.className = "far fa-circle";
         button.appendChild(iKreis);
-        /* Disablen des Button
-        button.setAttribute("disabled", "true");
-        console.log(button);
+        button.setAttribute("data-WerHatGedrückt", "Computer");
+        /*
+        console.log(button.getAttribute("data-WerHatGedrückt"));
         */
-        
-        
+        button.setAttribute("boolean", "false");
+        /*disablen des Button
+        button.setAttribute("disabled", "true");
+        */
+        computerArray.push(button);
+        /*
+        myArrayButtons.pop(button);
+        */
+        console.log(computerArray);
+
+
     }
 
-    startButton.addEventListener("click", function(): void {startGame(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
-    
+    startButton.addEventListener("click", function (): void { startGame(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
+     //Bei Klick auf Start, fängt das Spiel an und Computer macht seinen Zug//
+
+
+
+
+    //Wenn Spieler Kreuz gesetzt hat, macht Computer seinen Zug und setzt Kreis//
+    function computerZug(button: HTMLElement): void {
+
+        let iKreis: HTMLElement = document.createElement("i");
+        iKreis.className = "far fa-circle";
+        button.appendChild(iKreis);
+        button.setAttribute("boolean", "false");
+        button.setAttribute("data-WerHatGedrückt", "Computer");
+        /*disablen des Button
+        button.setAttribute("disabled", "true");
+        */
+        computerArray.push(button);
+        console.log(computerArray);
+
+
+
+    }
+
+    button1.addEventListener("click", function (): void { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
+    button2.addEventListener("click", function (): void { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
+    button3.addEventListener("click", function (): void { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
+    button4.addEventListener("click", function (): void { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
+    button5.addEventListener("click", function (): void { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
+    button6.addEventListener("click", function (): void { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
+    button7.addEventListener("click", function (): void { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
+    button8.addEventListener("click", function (): void { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
+    button9.addEventListener("click", function (): void { computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
+    //Wenn Spieler Kreuz gesetzt hat, macht Computer seinen Zug und setzt Kreis//
+
 
 
 
