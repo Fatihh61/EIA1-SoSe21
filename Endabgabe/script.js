@@ -10,7 +10,22 @@ var Endabgabe;
     var button7 = document.getElementById("btn7");
     var button8 = document.getElementById("btn8");
     var button9 = document.getElementById("btn9");
+    var button10 = document.getElementById("btn10");
+    var button11 = document.getElementById("btn11");
+    var button12 = document.getElementById("btn12");
+    var button13 = document.getElementById("btn13");
+    var button14 = document.getElementById("btn14");
+    var button15 = document.getElementById("btn15");
+    var button16 = document.getElementById("btn16");
     //Felder 1-9 wurden definiert//
+    //Schwierigkeitsgrade wurden definiert//
+    var mittel = document.getElementById("mittel");
+    var schwierig = document.getElementById("schwierig");
+    //Punktestand und Rundenanzahl wurden definiert//
+    var spielerpunktestand = document.getElementById("Spielerpunktestand");
+    var computerpunktestand = document.getElementById("Computerpunktestand");
+    var rundenanzahl = document.getElementById("Rundenanzahl");
+    //Punktestand und Rundenanzahl wurden definiert//
     //Arrays wurden definiert//
     var myArrayButtons = [button1, button2, button3, button4, button5, button6, button7, button8, button9];
     var spielerArray = [];
@@ -23,29 +38,37 @@ var Endabgabe;
     //Start Button wurde definiert//
     //Indexzähler wurde definiert//
     var indexzaehler = 0;
+    var indexzaehlerSpieler = 0;
+    var indexzaehlerComputer = 0;
+    var rundenanzahlcounter = 0;
     //Indexzähler wurde definiert//
     //Funktion Kreuz in Felder 1-9 setzen, bei Klick auf eines der Felder (Spielerzug)//
     function SpielerZug(button) {
-        var iKreuz = document.createElement("i");
-        iKreuz.className = "fas fa-times";
-        button.appendChild(iKreuz);
-        button.setAttribute("data-WerHatGedrückt", "Spieler");
-        /*
-        console.log(button.getAttribute("data-WerHatGedrückt"));
-        */
-        button.setAttribute("boolean", "false");
-        /*disablen des Button
-        button.setAttribute("disabled", "true");
-        */
-        spielerArray.push(button);
-        console.log(spielerArray);
-        var indexOfButton = myArrayButtons.indexOf(button);
-        myArrayButtons.splice(indexOfButton, 1);
-        console.log(myArrayButtons);
-        computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]);
-        /*
-        myArrayButtons.pop(button);
-        */
+        if (indexzaehler <= myArrayButtons.length) {
+            var iKreuz = document.createElement("i");
+            iKreuz.className = "fas fa-times";
+            button.appendChild(iKreuz);
+            button.setAttribute("data-WerHatGedrückt", "Spieler");
+            /*
+            console.log(button.getAttribute("data-WerHatGedrückt"));
+            */
+            button.setAttribute("boolean", "false");
+            /*disablen des Button
+            button.setAttribute("disabled", "true");
+            */
+            spielerArray.push(button);
+            console.log(spielerArray);
+            var indexOfButton = myArrayButtons.indexOf(button);
+            myArrayButtons.splice(indexOfButton, 1);
+            /*
+            console.log(myArrayButtons);
+            */
+            computerZug(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]);
+            /*
+            myArrayButtons.pop(button);
+            */
+            gewinnerErmitteln();
+        }
     }
     button1.addEventListener("click", function () { SpielerZug(button1); });
     button2.addEventListener("click", function () { SpielerZug(button2); });
@@ -71,26 +94,20 @@ var Endabgabe;
         button.setAttribute("disabled", "true");
         */
         computerArray.push(button);
+        console.log(computerArray);
         var indexOfButton = myArrayButtons.indexOf(button);
         myArrayButtons.splice(indexOfButton, 1);
+        /*
         console.log(myArrayButtons);
+        */
         /*
         myArrayButtons.pop(button);
         */
-        /*
-         console.log(computerArray);
-         */
     }
     startButton.addEventListener("click", function () { startGame(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
     //Bei Klick auf Start, fängt das Spiel an und Computer macht seinen Zug//
     //Wenn Spieler Kreuz gesetzt hat, macht Computer seinen Zug und setzt Kreis//
     function computerZug(button) {
-        console.log("Hallo");
-        /* Methode 2---------------
-        if (myArrayButtons == true) {
-            
-        }
-        */
         var iKreis = document.createElement("i");
         iKreis.className = "far fa-circle";
         button.appendChild(iKreis);
@@ -101,21 +118,83 @@ var Endabgabe;
         */
         computerArray.push(button);
         console.log(computerArray);
-        /* Methode3-------------
-        myArrayButtons.filter(function (value) {
-
-            return value == button;
-
-        });
-        */
         var indexOfButton = myArrayButtons.indexOf(button);
         myArrayButtons.splice(indexOfButton, 1);
+        /*
         console.log(myArrayButtons);
+        */
+        /*
         console.log(indexOfButton);
+        */
         /*
         myArrayButtons.pop(button);
         */
+        gewinnerErmitteln();
     }
-    //Wenn Spieler Kreuz gesetzt hat, macht Computer seinen Zug und setzt Kreis//
+    function gewinnerErmitteln() {
+        if (SpielerHat([button1, button2, button3]) || SpielerHat([button4, button5, button6]) ||
+            SpielerHat([button7, button8, button9]) || SpielerHat([button1, button4, button7]) ||
+            SpielerHat([button2, button5, button8]) || SpielerHat([button3, button6, button9]) ||
+            SpielerHat([button1, button5, button9]) || SpielerHat([button3, button5, button7])) {
+            alert("Spieler hat gewonnen");
+            console.log("Spieler hat gewonnen");
+            if (myArrayButtons.length == 9) {
+                spielerpunktestand.innerHTML = "Spieler: " + indexzaehlerSpieler++;
+            }
+            while (spielerArray.length > 0) {
+                myArrayButtons.push(spielerArray.pop());
+                console.log(spielerArray);
+                console.log(myArrayButtons);
+            }
+            while (computerArray.length > 0) {
+                myArrayButtons.push(computerArray.pop());
+                console.log(computerArray);
+                console.log(myArrayButtons);
+            }
+        }
+        else if (ComputerHat([button1, button2, button3]) || ComputerHat([button4, button5, button6]) ||
+            ComputerHat([button7, button8, button9]) || ComputerHat([button1, button4, button7]) ||
+            ComputerHat([button2, button5, button8]) || ComputerHat([button3, button6, button9]) ||
+            ComputerHat([button1, button5, button9]) || ComputerHat([button3, button5, button7])) {
+            computerpunktestand.innerHTML = "Computer: " + indexzaehlerComputer++;
+            alert("Computer hat gewonnen");
+            console.log("Computer hat gewonnen");
+            while (computerArray.length > 0) {
+                myArrayButtons.push(computerArray.pop());
+                console.log(computerArray);
+                console.log(myArrayButtons);
+            }
+        }
+        else if (myArrayButtons.length == 0) {
+            alert("Unentschieden");
+            console.log("Unentschieden");
+            rundenanzahl.innerHTML = "Runden: " + rundenanzahlcounter++;
+            computerpunktestand.innerHTML = "Computer: " + indexzaehlerComputer++;
+            spielerpunktestand.innerHTML = "Spieler: " + indexzaehlerSpieler++;
+        }
+    }
+    function SpielerHat(elemente) {
+        var ergebnis = true;
+        for (var index = 0; index < elemente.length; index++) {
+            ergebnis = ergebnis && spielerArray.indexOf(elemente[index]) >= 0;
+        }
+        return ergebnis;
+    }
+    function ComputerHat(elemente) {
+        var ergebnis = true;
+        for (var index = 0; index < elemente.length; index++) {
+            ergebnis = ergebnis && spielerArray.indexOf(elemente[index]) >= 0;
+        }
+        return ergebnis;
+    }
+    mittel.addEventListener("click", function () {
+        button10.classList.remove("isHidden");
+        button11.classList.remove("isHidden");
+        button12.classList.remove("isHidden");
+        button13.classList.remove("isHidden");
+        button14.classList.remove("isHidden");
+        button15.classList.remove("isHidden");
+        button16.classList.remove("isHidden");
+    });
 })(Endabgabe || (Endabgabe = {}));
 //# sourceMappingURL=script.js.map

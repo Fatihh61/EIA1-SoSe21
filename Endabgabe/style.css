@@ -82,6 +82,7 @@ span {
     background-color: white;
     justify-content: center;
     display: grid;
+    
 }
 
 .far {
@@ -89,6 +90,7 @@ span {
     background-color: white;
     justify-content: center;
     display: grid;
+    
 }
 
 
@@ -167,4 +169,71 @@ span {
     background-color: black;
     top: 220px;
     left: 220px;
+}
+
+#btn10 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    top: 330px;
+}
+
+#btn11 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    top: 330px;
+    left: 110px;
+}
+
+#btn12 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    top: 330px;
+    left: 220px;
+}
+
+#btn13 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    left: 330px;
+}
+
+#btn14 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    top: 110px;
+    left: 330px;
+}
+
+#btn15 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    top: 220px;
+    left: 330px;
+}
+
+#btn16 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    top: 330px;
+    left: 330px;
+}
+
+.isHidden {
+
+    display: none !important;
+
 }
