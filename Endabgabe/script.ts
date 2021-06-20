@@ -181,26 +181,36 @@ namespace Endabgabe {
             alert("Spieler hat gewonnen");
             console.log("Spieler hat gewonnen");
 
+
             if (myArrayButtons.length == 9) {
                 spielerpunktestand.innerHTML = "Spieler: " + indexzaehlerSpieler++;
+                rundenanzahlcounter++;
             }
 
 
-            while (spielerArray.length > 0) {
 
+            do {
                 myArrayButtons.push(spielerArray.pop());
                 console.log(spielerArray);
                 console.log(myArrayButtons);
             }
+            while (spielerArray.length > 0);
 
 
-
-            while (computerArray.length > 0) {
-
+            do {
                 myArrayButtons.push(computerArray.pop());
                 console.log(computerArray);
                 console.log(myArrayButtons);
             }
+            while (computerArray.length > 0);
+
+            reset();
+
+
+
+
+
+
 
 
 
@@ -271,6 +281,20 @@ namespace Endabgabe {
         }
 
         return ergebnis;
+
+
+    }
+
+
+
+    function reset(): void {
+
+        if (myArrayButtons.length == 9) {
+
+            button1.classList.remove("fas fa-times");
+
+        }
+
 
 
     }

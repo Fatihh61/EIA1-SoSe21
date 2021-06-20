@@ -140,17 +140,19 @@ var Endabgabe;
             console.log("Spieler hat gewonnen");
             if (myArrayButtons.length == 9) {
                 spielerpunktestand.innerHTML = "Spieler: " + indexzaehlerSpieler++;
+                rundenanzahlcounter++;
             }
-            while (spielerArray.length > 0) {
+            do {
                 myArrayButtons.push(spielerArray.pop());
                 console.log(spielerArray);
                 console.log(myArrayButtons);
-            }
-            while (computerArray.length > 0) {
+            } while (spielerArray.length > 0);
+            do {
                 myArrayButtons.push(computerArray.pop());
                 console.log(computerArray);
                 console.log(myArrayButtons);
-            }
+            } while (computerArray.length > 0);
+            reset();
         }
         else if (ComputerHat([button1, button2, button3]) || ComputerHat([button4, button5, button6]) ||
             ComputerHat([button7, button8, button9]) || ComputerHat([button1, button4, button7]) ||
@@ -186,6 +188,11 @@ var Endabgabe;
             ergebnis = ergebnis && spielerArray.indexOf(elemente[index]) >= 0;
         }
         return ergebnis;
+    }
+    function reset() {
+        if (myArrayButtons.length == 9) {
+            button1.classList.remove("fas fa-times");
+        }
     }
     mittel.addEventListener("click", function () {
         button10.classList.remove("isHidden");
