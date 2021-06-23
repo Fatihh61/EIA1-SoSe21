@@ -43,9 +43,9 @@ namespace Endabgabe {
 
     //Indexzähler wurde definiert//
     var indexzaehler: number = 0;
-    var indexzaehlerSpieler: number = 0;
-    var indexzaehlerComputer: number = 0;
-    var rundenanzahlcounter: number = 0;
+    var indexzaehlerSpieler: number = 1;
+    var indexzaehlerComputer: number = 1;
+    var rundenanzahlcounter: number = 2;
     //Indexzähler wurde definiert//
 
 
@@ -79,6 +79,29 @@ namespace Endabgabe {
             myArrayButtons.pop(button);
             */
             gewinnerErmitteln();
+
+            
+            if (myArrayButtons.length == 9) {
+                
+                /*
+                iKreuz.removeAttribute("class");
+                iKreuz.removeAttribute("class");
+                console.log(iKreuz);
+                */
+               
+                for (let index: number = 0; index < myArrayButtons.length; index++) {
+                    
+                    document.querySelectorAll("i").forEach(b => b.removeAttribute("class"));
+                    
+                    /*
+                    iKreuz.remove();
+                    */
+    
+                }
+                
+            }
+            
+            
         }
     }
 
@@ -177,44 +200,43 @@ namespace Endabgabe {
             SpielerHat([button2, button5, button8]) || SpielerHat([button3, button6, button9]) ||
             SpielerHat([button1, button5, button9]) || SpielerHat([button3, button5, button7])) {
 
+            spielerpunktestand.innerHTML = "Spieler: " + indexzaehlerSpieler++;
 
+
+
+            rundenanzahl.innerHTML = "Runden: " + rundenanzahlcounter--;
             alert("Spieler hat gewonnen");
             console.log("Spieler hat gewonnen");
 
 
-            if (myArrayButtons.length == 9) {
-                spielerpunktestand.innerHTML = "Spieler: " + indexzaehlerSpieler++;
-                rundenanzahlcounter++;
-            }
+            while (spielerArray.length > 0) {
 
 
-
-            do {
                 myArrayButtons.push(spielerArray.pop());
-                console.log(spielerArray);
-                console.log(myArrayButtons);
+
+
+
+
+
             }
-            while (spielerArray.length > 0);
 
 
-            do {
+
+            while (computerArray.length > 0) {
+
                 myArrayButtons.push(computerArray.pop());
-                console.log(computerArray);
-                console.log(myArrayButtons);
+
             }
-            while (computerArray.length > 0);
-
-            reset();
 
 
 
+            console.log(computerArray);
+            console.log(spielerArray);
+            console.log(myArrayButtons);
 
-
-
-
-
-
-
+            if (rundenanzahlcounter == -1) {
+                alert("Spiel ist vorbei");
+            }
 
 
 
@@ -225,6 +247,7 @@ namespace Endabgabe {
             ComputerHat([button2, button5, button8]) || ComputerHat([button3, button6, button9]) ||
             ComputerHat([button1, button5, button9]) || ComputerHat([button3, button5, button7])) {
 
+            rundenanzahl.innerHTML = "Runden: " + rundenanzahlcounter--;
             computerpunktestand.innerHTML = "Computer: " + indexzaehlerComputer++;
             alert("Computer hat gewonnen");
             console.log("Computer hat gewonnen");
@@ -233,19 +256,64 @@ namespace Endabgabe {
             while (computerArray.length > 0) {
 
                 myArrayButtons.push(computerArray.pop());
-                console.log(computerArray);
-                console.log(myArrayButtons);
+
+            }
+
+            while (spielerArray.length > 0) {
+
+
+                myArrayButtons.push(spielerArray.pop());
+
+
+
+            }
+
+
+            console.log(computerArray);
+            console.log(spielerArray);
+            console.log(myArrayButtons);
+
+            if (rundenanzahlcounter == -1) {
+                alert("Spiel ist vorbei");
             }
 
 
 
-        } else if (myArrayButtons.length == 0) {
+        } else if (myArrayButtons.length < 1) {
 
             alert("Unentschieden");
             console.log("Unentschieden");
-            rundenanzahl.innerHTML = "Runden: " + rundenanzahlcounter++;
+            rundenanzahl.innerHTML = "Runden: " + rundenanzahlcounter--;
             computerpunktestand.innerHTML = "Computer: " + indexzaehlerComputer++;
             spielerpunktestand.innerHTML = "Spieler: " + indexzaehlerSpieler++;
+
+
+
+
+            while (computerArray.length > 0) {
+
+                myArrayButtons.push(computerArray.pop());
+
+            }
+
+            while (spielerArray.length > 0) {
+
+
+                myArrayButtons.push(spielerArray.pop());
+
+
+
+            }
+
+
+
+            console.log(computerArray);
+            console.log(spielerArray);
+            console.log(myArrayButtons);
+
+            if (rundenanzahlcounter == -1) {
+                alert("Spiel ist vorbei");
+            }
 
 
         }
@@ -276,7 +344,7 @@ namespace Endabgabe {
         let ergebnis: boolean = true;
 
         for (let index: number = 0; index < elemente.length; index++) {
-            ergebnis = ergebnis && spielerArray.indexOf(elemente[index]) >= 0;
+            ergebnis = ergebnis && computerArray.indexOf(elemente[index]) >= 0;
 
         }
 
@@ -287,17 +355,11 @@ namespace Endabgabe {
 
 
 
-    function reset(): void {
-
-        if (myArrayButtons.length == 9) {
-
-            button1.classList.remove("fas fa-times");
-
-        }
+   
 
 
 
-    }
+    
 
 
 
