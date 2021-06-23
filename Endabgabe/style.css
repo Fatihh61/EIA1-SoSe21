@@ -237,3 +237,9 @@ span {
     display: none !important;
 
 }
+
+.pointerEvents {
+
+    pointer-events: none;
+
+}

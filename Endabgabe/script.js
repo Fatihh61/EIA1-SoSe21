@@ -48,6 +48,9 @@ var Endabgabe;
             var iKreuz = document.createElement("i");
             iKreuz.className = "fas fa-times";
             button.appendChild(iKreuz);
+            /*
+            button.classList.add("pointerEvents");
+            */
             button.setAttribute("data-WerHatGedrückt", "Spieler");
             /*
             console.log(button.getAttribute("data-WerHatGedrückt"));
@@ -77,6 +80,9 @@ var Endabgabe;
                 for (var index = 0; index < myArrayButtons.length; index++) {
                     document.querySelectorAll("i").forEach(function (b) { return b.removeAttribute("class"); });
                     /*
+                    document.querySelectorAll("button").forEach(b => b.removeAttribute("class"));
+                    */
+                    /*
                     iKreuz.remove();
                     */
                 }
@@ -98,6 +104,9 @@ var Endabgabe;
         var iKreis = document.createElement("i");
         iKreis.className = "far fa-circle";
         button.appendChild(iKreis);
+        /*
+        button.classList.add("pointerEvents");
+        */
         button.setAttribute("data-WerHatGedrückt", "Computer");
         /*
         console.log(button.getAttribute("data-WerHatGedrückt"));
@@ -116,6 +125,7 @@ var Endabgabe;
         /*
         myArrayButtons.pop(button);
         */
+        toggleSchwierigkeitsgrad();
     }
     startButton.addEventListener("click", function () { startGame(myArrayButtons[Math.floor(Math.random() * myArrayButtons.length)]); });
     //Bei Klick auf Start, fängt das Spiel an und Computer macht seinen Zug//
@@ -124,6 +134,9 @@ var Endabgabe;
         var iKreis = document.createElement("i");
         iKreis.className = "far fa-circle";
         button.appendChild(iKreis);
+        /*
+        button.classList.add("pointerEvents");
+        */
         button.setAttribute("boolean", "false");
         button.setAttribute("data-WerHatGedrückt", "Computer");
         /*disablen des Button
@@ -164,6 +177,7 @@ var Endabgabe;
             console.log(myArrayButtons);
             if (rundenanzahlcounter == -1) {
                 alert("Spiel ist vorbei");
+                toggleSchwierigkeitsgrad();
             }
         }
         else if (ComputerHat([button1, button2, button3]) || ComputerHat([button4, button5, button6]) ||
@@ -205,6 +219,7 @@ var Endabgabe;
             if (rundenanzahlcounter == -1) {
                 alert("Spiel ist vorbei");
             }
+            toggleSchwierigkeitsgradErneut();
         }
     }
     function SpielerHat(elemente) {
@@ -220,6 +235,14 @@ var Endabgabe;
             ergebnis = ergebnis && computerArray.indexOf(elemente[index]) >= 0;
         }
         return ergebnis;
+    }
+    function toggleSchwierigkeitsgrad() {
+        mittel.classList.add("isHidden");
+        schwierig.classList.add("isHidden");
+    }
+    function toggleSchwierigkeitsgradErneut() {
+        mittel.classList.remove("isHidden");
+        schwierig.classList.remove("isHidden");
     }
     mittel.addEventListener("click", function () {
         button10.classList.remove("isHidden");

@@ -57,6 +57,9 @@ namespace Endabgabe {
             let iKreuz: HTMLElement = document.createElement("i");
             iKreuz.className = "fas fa-times";
             button.appendChild(iKreuz);
+            /*
+            button.classList.add("pointerEvents");
+            */
             button.setAttribute("data-WerHatGedrückt", "Spieler");
             /*
             console.log(button.getAttribute("data-WerHatGedrückt"));
@@ -80,28 +83,30 @@ namespace Endabgabe {
             */
             gewinnerErmitteln();
 
-            
+
             if (myArrayButtons.length == 9) {
-                
+
                 /*
                 iKreuz.removeAttribute("class");
                 iKreuz.removeAttribute("class");
                 console.log(iKreuz);
                 */
-               
+
                 for (let index: number = 0; index < myArrayButtons.length; index++) {
-                    
+
                     document.querySelectorAll("i").forEach(b => b.removeAttribute("class"));
-                    
+                    /*
+                    document.querySelectorAll("button").forEach(b => b.removeAttribute("class"));
+                    */
                     /*
                     iKreuz.remove();
                     */
-    
+
                 }
-                
+
             }
-            
-            
+
+
         }
     }
 
@@ -114,6 +119,7 @@ namespace Endabgabe {
     button7.addEventListener("click", function (): void { SpielerZug(button7); });
     button8.addEventListener("click", function (): void { SpielerZug(button8); });
     button9.addEventListener("click", function (): void { SpielerZug(button9); });
+    
     //Funktion Kreuz in Felder 1-9 setzen, bei Klick auf auf eines der Felder (Spielerzug)//
 
 
@@ -123,9 +129,13 @@ namespace Endabgabe {
     //Bei Klick auf Start, fängt das Spiel an und Computer macht seinen Zug//
     function startGame(button: HTMLElement): void {
 
+        
         let iKreis: HTMLElement = document.createElement("i");
         iKreis.className = "far fa-circle";
         button.appendChild(iKreis);
+        /*
+        button.classList.add("pointerEvents");
+        */
         button.setAttribute("data-WerHatGedrückt", "Computer");
         /*
         console.log(button.getAttribute("data-WerHatGedrückt"));
@@ -146,6 +156,9 @@ namespace Endabgabe {
         /*
         myArrayButtons.pop(button);
         */
+        toggleSchwierigkeitsgrad();
+
+
 
 
 
@@ -164,6 +177,9 @@ namespace Endabgabe {
         let iKreis: HTMLElement = document.createElement("i");
         iKreis.className = "far fa-circle";
         button.appendChild(iKreis);
+        /*
+        button.classList.add("pointerEvents");
+        */
         button.setAttribute("boolean", "false");
         button.setAttribute("data-WerHatGedrückt", "Computer");
         /*disablen des Button
@@ -236,6 +252,7 @@ namespace Endabgabe {
 
             if (rundenanzahlcounter == -1) {
                 alert("Spiel ist vorbei");
+                toggleSchwierigkeitsgrad();
             }
 
 
@@ -312,9 +329,11 @@ namespace Endabgabe {
             console.log(myArrayButtons);
 
             if (rundenanzahlcounter == -1) {
+                
                 alert("Spiel ist vorbei");
+                
             }
-
+            toggleSchwierigkeitsgradErneut();
 
         }
 
@@ -355,11 +374,27 @@ namespace Endabgabe {
 
 
 
-   
+    function toggleSchwierigkeitsgrad(): void {
+
+        mittel.classList.add("isHidden");
+        schwierig.classList.add("isHidden");
+    }
+
+
+    function toggleSchwierigkeitsgradErneut(): void {
+
+        mittel.classList.remove("isHidden");
+        schwierig.classList.remove("isHidden");
+
+    }
 
 
 
-    
+
+
+
+
+
 
 
 
