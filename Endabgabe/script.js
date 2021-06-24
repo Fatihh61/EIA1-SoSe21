@@ -17,6 +17,15 @@ var Endabgabe;
     var button14 = document.getElementById("btn14");
     var button15 = document.getElementById("btn15");
     var button16 = document.getElementById("btn16");
+    var button17 = document.getElementById("btn17");
+    var button18 = document.getElementById("btn18");
+    var button19 = document.getElementById("btn19");
+    var button20 = document.getElementById("btn20");
+    var button21 = document.getElementById("btn21");
+    var button22 = document.getElementById("btn22");
+    var button23 = document.getElementById("btn23");
+    var button24 = document.getElementById("btn24");
+    var button25 = document.getElementById("btn25");
     //Felder 1-9 wurden definiert//
     //Schwierigkeitsgrade wurden definiert//
     var mittel = document.getElementById("mittel");
@@ -28,6 +37,7 @@ var Endabgabe;
     //Punktestand und Rundenanzahl wurden definiert//
     //Arrays wurden definiert//
     var myArrayButtons = [button1, button2, button3, button4, button5, button6, button7, button8, button9];
+    var myArrayButtonsMittel = [button10, button11, button12, button13, button14, button15, button16];
     var spielerArray = [];
     var computerArray = [];
     var spielerBoolean = [true, true, true, true, true, true, true, true, true];
@@ -98,6 +108,13 @@ var Endabgabe;
     button7.addEventListener("click", function () { SpielerZug(button7); });
     button8.addEventListener("click", function () { SpielerZug(button8); });
     button9.addEventListener("click", function () { SpielerZug(button9); });
+    button10.addEventListener("click", function () { SpielerZug(button10); });
+    button11.addEventListener("click", function () { SpielerZug(button11); });
+    button12.addEventListener("click", function () { SpielerZug(button12); });
+    button13.addEventListener("click", function () { SpielerZug(button13); });
+    button14.addEventListener("click", function () { SpielerZug(button14); });
+    button15.addEventListener("click", function () { SpielerZug(button15); });
+    button16.addEventListener("click", function () { SpielerZug(button16); });
     //Funktion Kreuz in Felder 1-9 setzen, bei Klick auf auf eines der Felder (Spielerzug)//
     //Bei Klick auf Start, fängt das Spiel an und Computer macht seinen Zug//
     function startGame(button) {
@@ -183,7 +200,12 @@ var Endabgabe;
         else if (ComputerHat([button1, button2, button3]) || ComputerHat([button4, button5, button6]) ||
             ComputerHat([button7, button8, button9]) || ComputerHat([button1, button4, button7]) ||
             ComputerHat([button2, button5, button8]) || ComputerHat([button3, button6, button9]) ||
-            ComputerHat([button1, button5, button9]) || ComputerHat([button3, button5, button7])) {
+            ComputerHat([button1, button5, button9]) || ComputerHat([button3, button5, button7]) ||
+            ComputerHat([button1, button2, button3, button13]) || ComputerHat([button4, button5, button6, button14]) ||
+            ComputerHat([button7, button8, button9, button15]) || ComputerHat([button10, button11, button12, button16]) ||
+            ComputerHat([button1, button4, button7, button10]) || ComputerHat([button2, button5, button8, button11]) ||
+            ComputerHat([button3, button6, button9, button12]) || ComputerHat([button13, button14, button15, button16]) ||
+            ComputerHat([button1, button5, button9, button16]) || ComputerHat([button13, button6, button8, button10])) {
             rundenanzahl.innerHTML = "Runden: " + rundenanzahlcounter--;
             computerpunktestand.innerHTML = "Computer: " + indexzaehlerComputer++;
             alert("Computer hat gewonnen");
@@ -244,6 +266,17 @@ var Endabgabe;
         mittel.classList.remove("isHidden");
         schwierig.classList.remove("isHidden");
     }
+    //---------------------------------------------------------------------------------------------------------//
+    mittel.addEventListener("click", function () {
+        myArrayButtons.push(button10);
+        myArrayButtons.push(button11);
+        myArrayButtons.push(button12);
+        myArrayButtons.push(button13);
+        myArrayButtons.push(button14);
+        myArrayButtons.push(button15);
+        myArrayButtons.push(button16);
+        console.log(myArrayButtons);
+    });
     mittel.addEventListener("click", function () {
         button10.classList.remove("isHidden");
         button11.classList.remove("isHidden");

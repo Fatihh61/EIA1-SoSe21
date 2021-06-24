@@ -17,6 +17,15 @@ namespace Endabgabe {
     var button14: HTMLElement = document.getElementById("btn14");
     var button15: HTMLElement = document.getElementById("btn15");
     var button16: HTMLElement = document.getElementById("btn16");
+    var button17: HTMLElement = document.getElementById("btn17");
+    var button18: HTMLElement = document.getElementById("btn18");
+    var button19: HTMLElement = document.getElementById("btn19");
+    var button20: HTMLElement = document.getElementById("btn20");
+    var button21: HTMLElement = document.getElementById("btn21");
+    var button22: HTMLElement = document.getElementById("btn22");
+    var button23: HTMLElement = document.getElementById("btn23");
+    var button24: HTMLElement = document.getElementById("btn24");
+    var button25: HTMLElement = document.getElementById("btn25");
     //Felder 1-9 wurden definiert//
 
     //Schwierigkeitsgrade wurden definiert//
@@ -31,6 +40,7 @@ namespace Endabgabe {
 
     //Arrays wurden definiert//
     var myArrayButtons: HTMLElement[] = [button1, button2, button3, button4, button5, button6, button7, button8, button9];
+    var myArrayButtonsMittel: HTMLElement[] = [button10, button11, button12, button13, button14, button15, button16];
     let spielerArray: HTMLElement[] = [];
     var computerArray: HTMLElement[] = [];
     var spielerBoolean: boolean[] = [true, true, true, true, true, true, true, true, true];
@@ -119,7 +129,13 @@ namespace Endabgabe {
     button7.addEventListener("click", function (): void { SpielerZug(button7); });
     button8.addEventListener("click", function (): void { SpielerZug(button8); });
     button9.addEventListener("click", function (): void { SpielerZug(button9); });
-    
+    button10.addEventListener("click", function (): void { SpielerZug(button10); });
+    button11.addEventListener("click", function (): void { SpielerZug(button11); });
+    button12.addEventListener("click", function (): void { SpielerZug(button12); });
+    button13.addEventListener("click", function (): void { SpielerZug(button13); });
+    button14.addEventListener("click", function (): void { SpielerZug(button14); });
+    button15.addEventListener("click", function (): void { SpielerZug(button15); });
+    button16.addEventListener("click", function (): void { SpielerZug(button16); });
     //Funktion Kreuz in Felder 1-9 setzen, bei Klick auf auf eines der Felder (Spielerzug)//
 
 
@@ -129,7 +145,7 @@ namespace Endabgabe {
     //Bei Klick auf Start, fängt das Spiel an und Computer macht seinen Zug//
     function startGame(button: HTMLElement): void {
 
-        
+
         let iKreis: HTMLElement = document.createElement("i");
         iKreis.className = "far fa-circle";
         button.appendChild(iKreis);
@@ -262,7 +278,12 @@ namespace Endabgabe {
         } else if (ComputerHat([button1, button2, button3]) || ComputerHat([button4, button5, button6]) ||
             ComputerHat([button7, button8, button9]) || ComputerHat([button1, button4, button7]) ||
             ComputerHat([button2, button5, button8]) || ComputerHat([button3, button6, button9]) ||
-            ComputerHat([button1, button5, button9]) || ComputerHat([button3, button5, button7])) {
+            ComputerHat([button1, button5, button9]) || ComputerHat([button3, button5, button7]) ||
+            ComputerHat([button1, button2, button3, button13]) || ComputerHat([button4, button5, button6, button14]) ||
+            ComputerHat([button7, button8, button9, button15]) || ComputerHat([button10, button11, button12, button16]) ||
+            ComputerHat([button1, button4, button7, button10]) || ComputerHat([button2, button5, button8, button11]) ||
+            ComputerHat([button3, button6, button9, button12]) || ComputerHat([button13, button14, button15, button16]) ||
+            ComputerHat([button1, button5, button9, button16]) || ComputerHat([button13, button6, button8, button10])) {
 
             rundenanzahl.innerHTML = "Runden: " + rundenanzahlcounter--;
             computerpunktestand.innerHTML = "Computer: " + indexzaehlerComputer++;
@@ -329,9 +350,9 @@ namespace Endabgabe {
             console.log(myArrayButtons);
 
             if (rundenanzahlcounter == -1) {
-                
+
                 alert("Spiel ist vorbei");
-                
+
             }
             toggleSchwierigkeitsgradErneut();
 
@@ -387,6 +408,31 @@ namespace Endabgabe {
         schwierig.classList.remove("isHidden");
 
     }
+
+
+
+
+//---------------------------------------------------------------------------------------------------------//
+
+
+
+    mittel.addEventListener("click", function (): void {
+
+        myArrayButtons.push(button10);
+        myArrayButtons.push(button11);
+        myArrayButtons.push(button12);
+        myArrayButtons.push(button13);
+        myArrayButtons.push(button14);
+        myArrayButtons.push(button15);
+        myArrayButtons.push(button16);
+        console.log(myArrayButtons);
+
+
+
+    });
+
+
+
 
 
 
