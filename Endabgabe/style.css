@@ -46,11 +46,41 @@ span {
     margin: 5px;
 }
 
-#Start {
+#StartLeicht {
     position: absolute;
     margin-top: 250px;
     margin-left: 150px;
     background-color: cornflowerblue;
+    width: 95px;
+    height: 30px;
+    text-align: center;
+    border-radius: 10px 10px 10px 10px;
+    border: 1px solid gold;
+    font-size: 20pt;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+#StartMittel {
+    position: absolute;
+    margin-top: 350px;
+    margin-left: 150px;
+    background-color: orange;
+    width: 95px;
+    height: 30px;
+    text-align: center;
+    border-radius: 10px 10px 10px 10px;
+    border: 1px solid gold;
+    font-size: 20pt;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+#StartSchwierig {
+    position: absolute;
+    margin-top: 450px;
+    margin-left: 150px;
+    background-color: red;
     width: 95px;
     height: 30px;
     text-align: center;
@@ -231,6 +261,87 @@ span {
     top: 330px;
     left: 330px;
 }
+
+#btn17 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    top: 440px;
+}
+
+#btn18 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    top: 440px;
+    left: 110px;
+}
+
+#btn19 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    top: 440px;
+    left: 220px;
+}
+
+#btn20 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    top: 440px;
+    left: 330px;
+}
+
+#btn21 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    left: 440px;
+}
+
+#btn22 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    top: 110px;
+    left: 440px;
+}
+
+#btn23 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    top: 220px;
+    left: 440px;
+}
+
+#btn24 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    top: 330px;
+    left: 440px;
+}
+
+#btn25 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    top: 440px;
+    left: 440px;
+}
+
+
 
 .isHidden {
 
