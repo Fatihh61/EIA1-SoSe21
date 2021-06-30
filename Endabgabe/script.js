@@ -31,6 +31,9 @@ var Endabgabe;
     var leicht = document.getElementById("leicht");
     var mittel = document.getElementById("mittel");
     var schwierig = document.getElementById("schwierig");
+    //Schwierigkeitsgrade wurden definiert//
+    var spielerpunktestandNumber = 0;
+    var computerpunktestandNumber = 0;
     //Punktestand und Rundenanzahl wurden definiert//
     var spielerpunktestand = document.getElementById("Spielerpunktestand");
     var computerpunktestand = document.getElementById("Computerpunktestand");
@@ -57,23 +60,50 @@ var Endabgabe;
     var rundenanzahlcounterMittel = 4;
     //Indexzähler wurde definiert//
     function toggleSchwierigkeitsgrad() {
+        leicht.classList.add("isHidden");
         mittel.classList.add("isHidden");
         schwierig.classList.add("isHidden");
     }
     function toggleSchwierigkeitsgradErneut() {
+        leicht.classList.remove("isHidden");
         mittel.classList.remove("isHidden");
         schwierig.classList.remove("isHidden");
+    }
+    function erstStartDrücken() {
+        button1.classList.add("pointerEvents");
+        button2.classList.add("pointerEvents");
+        button3.classList.add("pointerEvents");
+        button4.classList.add("pointerEvents");
+        button5.classList.add("pointerEvents");
+        button6.classList.add("pointerEvents");
+        button7.classList.add("pointerEvents");
+        button8.classList.add("pointerEvents");
+        button9.classList.add("pointerEvents");
+    }
+    function erstStartDrückenRemove() {
+        button1.classList.remove("pointerEvents");
+        button2.classList.remove("pointerEvents");
+        button3.classList.remove("pointerEvents");
+        button4.classList.remove("pointerEvents");
+        button5.classList.remove("pointerEvents");
+        button6.classList.remove("pointerEvents");
+        button7.classList.remove("pointerEvents");
+        button8.classList.remove("pointerEvents");
+        button9.classList.remove("pointerEvents");
     }
     leicht.addEventListener("click", function () {
         startButtonMittel.classList.add("isHidden");
         startButtonSchwierig.classList.add("isHidden");
         toggleSchwierigkeitsgrad();
+        erstStartDrücken();
         //Funktion Kreuz in Felder 1-9 setzen, bei Klick auf eines der Felder (Spielerzug)//
         function SpielerZug(button) {
             if (indexzaehler <= myArrayButtons.length) {
                 var iKreuz = document.createElement("i");
                 iKreuz.className = "fas fa-times";
                 button.appendChild(iKreuz);
+                button.classList.add("pointerEvents");
+                startButtonLeicht.classList.add("pointerEvents");
                 /*
                 button.classList.add("pointerEvents");
                 */
@@ -137,6 +167,9 @@ var Endabgabe;
             var iKreis = document.createElement("i");
             iKreis.className = "far fa-circle";
             button.appendChild(iKreis);
+            startButtonLeicht.classList.add("pointerEvents");
+            erstStartDrückenRemove();
+            button.classList.add("pointerEvents");
             /*
             button.classList.add("pointerEvents");
             */
@@ -167,6 +200,7 @@ var Endabgabe;
             var iKreis = document.createElement("i");
             iKreis.className = "far fa-circle";
             button.appendChild(iKreis);
+            button.classList.add("pointerEvents");
             /*
             button.classList.add("pointerEvents");
             */
@@ -199,6 +233,17 @@ var Endabgabe;
                 SpielerHat([button1, button5, button9]) || SpielerHat([button3, button5, button7])) {
                 spielerpunktestand.innerHTML = "Spieler: " + indexzaehlerSpieler++;
                 rundenanzahl.innerHTML = "Runden: " + rundenanzahlcounter--;
+                spielerpunktestandNumber++;
+                startButtonLeicht.classList.remove("pointerEvents");
+                button1.classList.remove("pointerEvents");
+                button2.classList.remove("pointerEvents");
+                button3.classList.remove("pointerEvents");
+                button4.classList.remove("pointerEvents");
+                button5.classList.remove("pointerEvents");
+                button6.classList.remove("pointerEvents");
+                button7.classList.remove("pointerEvents");
+                button8.classList.remove("pointerEvents");
+                button9.classList.remove("pointerEvents");
                 alert("Spieler hat gewonnen");
                 console.log("Spieler hat gewonnen");
                 while (spielerArray.length > 0) {
@@ -207,11 +252,22 @@ var Endabgabe;
                 while (computerArray.length > 0) {
                     myArrayButtons.push(computerArray.pop());
                 }
+                erstStartDrücken();
                 console.log(computerArray);
                 console.log(spielerArray);
                 console.log(myArrayButtons);
+                console.log(spielerpunktestandNumber);
+                console.log(computerpunktestandNumber);
                 if (rundenanzahlcounter == -1) {
-                    alert("Spiel ist vorbei");
+                    if (spielerpunktestandNumber > computerpunktestandNumber) {
+                        alert("Spiel ist vorbei. Spieler hat gewonnen");
+                    }
+                    if (spielerpunktestandNumber == computerpunktestandNumber) {
+                        alert("Spiel ist vorbei. Unentschieden!");
+                    }
+                    if (computerpunktestandNumber > spielerpunktestandNumber) {
+                        alert("Spiel ist vorbei. Computer hat gewonnen!");
+                    }
                     toggleSchwierigkeitsgradErneut();
                     rundenanzahl.innerHTML = "Runden: 3";
                     spielerpunktestand.innerHTML = "Spieler: 0";
@@ -220,6 +276,7 @@ var Endabgabe;
                     indexzaehlerSpieler = 1;
                     indexzaehlerComputer = 1;
                     rundenanzahlcounter = 2;
+                    location.reload();
                 }
             }
             else if (ComputerHat([button1, button2, button3]) || ComputerHat([button4, button5, button6]) ||
@@ -233,6 +290,17 @@ var Endabgabe;
                 ComputerHat([button1, button5, button9, button16]) || ComputerHat([button13, button6, button8, button10])) {
                 rundenanzahl.innerHTML = "Runden: " + rundenanzahlcounter--;
                 computerpunktestand.innerHTML = "Computer: " + indexzaehlerComputer++;
+                computerpunktestandNumber++;
+                startButtonLeicht.classList.remove("pointerEvents");
+                button1.classList.remove("pointerEvents");
+                button2.classList.remove("pointerEvents");
+                button3.classList.remove("pointerEvents");
+                button4.classList.remove("pointerEvents");
+                button5.classList.remove("pointerEvents");
+                button6.classList.remove("pointerEvents");
+                button7.classList.remove("pointerEvents");
+                button8.classList.remove("pointerEvents");
+                button9.classList.remove("pointerEvents");
                 alert("Computer hat gewonnen");
                 console.log("Computer hat gewonnen");
                 while (computerArray.length > 0) {
@@ -241,11 +309,22 @@ var Endabgabe;
                 while (spielerArray.length > 0) {
                     myArrayButtons.push(spielerArray.pop());
                 }
+                erstStartDrücken();
                 console.log(computerArray);
                 console.log(spielerArray);
                 console.log(myArrayButtons);
+                console.log(spielerpunktestandNumber);
+                console.log(computerpunktestandNumber);
                 if (rundenanzahlcounter == -1) {
-                    alert("Spiel ist vorbei");
+                    if (computerpunktestandNumber > spielerpunktestandNumber) {
+                        alert("Spiel ist vorbei. Computer hat gewonnen");
+                    }
+                    if (spielerpunktestandNumber > computerpunktestandNumber) {
+                        alert("Spiel ist vorbei. Spieler hat gewonnen!");
+                    }
+                    if (computerpunktestandNumber == spielerpunktestandNumber) {
+                        alert("Spiel ist vorbei. Unentschieden!");
+                    }
                     toggleSchwierigkeitsgradErneut();
                     rundenanzahl.innerHTML = "Runden: 3";
                     spielerpunktestand.innerHTML = "Spieler: 0";
@@ -254,6 +333,7 @@ var Endabgabe;
                     indexzaehlerSpieler = 1;
                     indexzaehlerComputer = 1;
                     rundenanzahlcounter = 2;
+                    location.reload();
                 }
             }
             else if (myArrayButtons.length < 1) {
@@ -262,17 +342,38 @@ var Endabgabe;
                 rundenanzahl.innerHTML = "Runden: " + rundenanzahlcounter--;
                 computerpunktestand.innerHTML = "Computer: " + indexzaehlerComputer++;
                 spielerpunktestand.innerHTML = "Spieler: " + indexzaehlerSpieler++;
+                startButtonLeicht.classList.remove("pointerEvents");
+                button1.classList.remove("pointerEvents");
+                button2.classList.remove("pointerEvents");
+                button3.classList.remove("pointerEvents");
+                button4.classList.remove("pointerEvents");
+                button5.classList.remove("pointerEvents");
+                button6.classList.remove("pointerEvents");
+                button7.classList.remove("pointerEvents");
+                button8.classList.remove("pointerEvents");
+                button9.classList.remove("pointerEvents");
                 while (computerArray.length > 0) {
                     myArrayButtons.push(computerArray.pop());
                 }
                 while (spielerArray.length > 0) {
                     myArrayButtons.push(spielerArray.pop());
                 }
+                erstStartDrücken();
                 console.log(computerArray);
                 console.log(spielerArray);
                 console.log(myArrayButtons);
+                console.log(spielerpunktestandNumber);
+                console.log(computerpunktestandNumber);
                 if (rundenanzahlcounter == -1) {
-                    alert("Spiel ist vorbei");
+                    if (spielerpunktestandNumber == computerpunktestandNumber) {
+                        alert("Spiel ist vorbei. Unentschieden!");
+                    }
+                    if (spielerpunktestandNumber > computerpunktestandNumber) {
+                        alert("Spiel ist vorbei. Spieler hat gewonnen!");
+                    }
+                    if (computerpunktestandNumber > spielerpunktestandNumber) {
+                        alert("Spiel ist vorbei. Computer hat gewonnen!");
+                    }
                     toggleSchwierigkeitsgradErneut();
                     rundenanzahl.innerHTML = "Runden: 3";
                     spielerpunktestand.innerHTML = "Spieler: 0";
@@ -281,6 +382,7 @@ var Endabgabe;
                     indexzaehlerSpieler = 1;
                     indexzaehlerComputer = 1;
                     rundenanzahlcounter = 2;
+                    location.reload();
                 }
             }
         }
@@ -335,6 +437,9 @@ var EndabgabeMittel;
     var leicht = document.getElementById("leicht");
     var mittel = document.getElementById("mittel");
     var schwierig = document.getElementById("schwierig");
+    //Schwierigkeitsgrade wurden definiert//
+    var spielerpunktestandNumber = 0;
+    var computerpunktestandNumber = 0;
     //Punktestand und Rundenanzahl wurden definiert//
     var spielerpunktestand = document.getElementById("Spielerpunktestand");
     var computerpunktestand = document.getElementById("Computerpunktestand");
@@ -362,11 +467,49 @@ var EndabgabeMittel;
     //Indexzähler wurde definiert//
     function toggleSchwierigkeitsgradMittel() {
         leicht.classList.add("isHidden");
+        mittel.classList.add("isHidden");
         schwierig.classList.add("isHidden");
     }
     function toggleSchwierigkeitsgradErneutMittel() {
         leicht.classList.remove("isHidden");
+        mittel.classList.remove("isHidden");
         schwierig.classList.remove("isHidden");
+    }
+    function erstStartDrückenMittel() {
+        button1.classList.add("pointerEvents");
+        button2.classList.add("pointerEvents");
+        button3.classList.add("pointerEvents");
+        button4.classList.add("pointerEvents");
+        button5.classList.add("pointerEvents");
+        button6.classList.add("pointerEvents");
+        button7.classList.add("pointerEvents");
+        button8.classList.add("pointerEvents");
+        button9.classList.add("pointerEvents");
+        button10.classList.add("pointerEvents");
+        button11.classList.add("pointerEvents");
+        button12.classList.add("pointerEvents");
+        button13.classList.add("pointerEvents");
+        button14.classList.add("pointerEvents");
+        button15.classList.add("pointerEvents");
+        button16.classList.add("pointerEvents");
+    }
+    function erstStartDrückenRemoveMittel() {
+        button1.classList.remove("pointerEvents");
+        button2.classList.remove("pointerEvents");
+        button3.classList.remove("pointerEvents");
+        button4.classList.remove("pointerEvents");
+        button5.classList.remove("pointerEvents");
+        button6.classList.remove("pointerEvents");
+        button7.classList.remove("pointerEvents");
+        button8.classList.remove("pointerEvents");
+        button9.classList.remove("pointerEvents");
+        button10.classList.remove("pointerEvents");
+        button11.classList.remove("pointerEvents");
+        button12.classList.remove("pointerEvents");
+        button13.classList.remove("pointerEvents");
+        button14.classList.remove("pointerEvents");
+        button15.classList.remove("pointerEvents");
+        button16.classList.remove("pointerEvents");
     }
     function SpielerHat(elemente) {
         var ergebnis = true;
@@ -394,6 +537,7 @@ var EndabgabeMittel;
         myArrayButtonsMittel.push(button9);
         rundenanzahl.innerHTML = "Runden: 4";
         console.log(myArrayButtonsMittel);
+        erstStartDrückenMittel();
     });
     mittel.addEventListener("click", function () {
         button10.classList.remove("isHidden");
@@ -414,6 +558,8 @@ var EndabgabeMittel;
                 var iKreuz = document.createElement("i");
                 iKreuz.className = "fas fa-times";
                 button.appendChild(iKreuz);
+                button.classList.add("pointerEvents");
+                startButtonMittel.classList.add("pointerEvents");
                 /*
                 button.classList.add("pointerEvents");
                 */
@@ -432,7 +578,9 @@ var EndabgabeMittel;
                 /*
                 console.log(myArrayButtons);
                 */
-                computerZugMittel(myArrayButtonsMittel[Math.floor(Math.random() * myArrayButtonsMittel.length)]);
+                if (myArrayButtonsMittel.length != 0) {
+                    computerZugMittel(myArrayButtonsMittel[Math.floor(Math.random() * myArrayButtonsMittel.length)]);
+                }
                 /*
                 myArrayButtons.pop(button);
                 */
@@ -477,6 +625,9 @@ var EndabgabeMittel;
             var iKreis = document.createElement("i");
             iKreis.className = "far fa-circle";
             button.appendChild(iKreis);
+            startButtonMittel.classList.add("pointerEvents");
+            erstStartDrückenRemoveMittel();
+            button.classList.add("pointerEvents");
             /*
             button.classList.add("pointerEvents");
             */
@@ -506,6 +657,7 @@ var EndabgabeMittel;
             var iKreis = document.createElement("i");
             iKreis.className = "far fa-circle";
             button.appendChild(iKreis);
+            button.classList.add("pointerEvents");
             /*
             button.classList.add("pointerEvents");
             */
@@ -539,6 +691,24 @@ var EndabgabeMittel;
                 SpielerHat([button1, button5, button9, button16]) || SpielerHat([button13, button6, button8, button10])) {
                 spielerpunktestand.innerHTML = "Spieler: " + indexzaehlerSpieler++;
                 rundenanzahl.innerHTML = "Runden: " + rundenanzahlcounterMittel--;
+                spielerpunktestandNumber++;
+                startButtonMittel.classList.remove("pointerEvents");
+                button1.classList.remove("pointerEvents");
+                button2.classList.remove("pointerEvents");
+                button3.classList.remove("pointerEvents");
+                button4.classList.remove("pointerEvents");
+                button5.classList.remove("pointerEvents");
+                button6.classList.remove("pointerEvents");
+                button7.classList.remove("pointerEvents");
+                button8.classList.remove("pointerEvents");
+                button9.classList.remove("pointerEvents");
+                button10.classList.remove("pointerEvents");
+                button11.classList.remove("pointerEvents");
+                button12.classList.remove("pointerEvents");
+                button13.classList.remove("pointerEvents");
+                button14.classList.remove("pointerEvents");
+                button15.classList.remove("pointerEvents");
+                button16.classList.remove("pointerEvents");
                 alert("Spieler hat gewonnen");
                 console.log("Spieler hat gewonnen");
                 while (spielerArray.length > 0) {
@@ -547,11 +717,22 @@ var EndabgabeMittel;
                 while (computerArray.length > 0) {
                     myArrayButtonsMittel.push(computerArray.pop());
                 }
+                erstStartDrückenMittel();
                 console.log(computerArray);
                 console.log(spielerArray);
                 console.log(myArrayButtonsMittel);
+                console.log(spielerpunktestandNumber);
+                console.log(computerpunktestandNumber);
                 if (rundenanzahlcounterMittel == -1) {
-                    alert("Spiel ist vorbei");
+                    if (spielerpunktestandNumber > computerpunktestandNumber) {
+                        alert("Spiel ist vorbei. Spieler hat gewonnen");
+                    }
+                    if (spielerpunktestandNumber == computerpunktestandNumber) {
+                        alert("Spiel ist vorbei. Unentschieden!");
+                    }
+                    if (computerpunktestandNumber > spielerpunktestandNumber) {
+                        alert("Spiel ist vorbei. Computer hat gewonnen!");
+                    }
                     toggleSchwierigkeitsgradErneutMittel();
                     rundenanzahl.innerHTML = "Runden: 5";
                     spielerpunktestand.innerHTML = "Spieler: 0";
@@ -560,6 +741,7 @@ var EndabgabeMittel;
                     indexzaehlerSpieler = 1;
                     indexzaehlerComputer = 1;
                     rundenanzahlcounterMittel = 3;
+                    location.reload();
                 }
             }
             else if (ComputerHat([button1, button2, button3, button13]) || ComputerHat([button4, button5, button6, button14]) ||
@@ -569,6 +751,24 @@ var EndabgabeMittel;
                 ComputerHat([button1, button5, button9, button16]) || ComputerHat([button13, button6, button8, button10])) {
                 rundenanzahl.innerHTML = "Runden: " + rundenanzahlcounterMittel--;
                 computerpunktestand.innerHTML = "Computer: " + indexzaehlerComputer++;
+                computerpunktestandNumber++;
+                startButtonMittel.classList.remove("pointerEvents");
+                button1.classList.remove("pointerEvents");
+                button2.classList.remove("pointerEvents");
+                button3.classList.remove("pointerEvents");
+                button4.classList.remove("pointerEvents");
+                button5.classList.remove("pointerEvents");
+                button6.classList.remove("pointerEvents");
+                button7.classList.remove("pointerEvents");
+                button8.classList.remove("pointerEvents");
+                button9.classList.remove("pointerEvents");
+                button10.classList.remove("pointerEvents");
+                button11.classList.remove("pointerEvents");
+                button12.classList.remove("pointerEvents");
+                button13.classList.remove("pointerEvents");
+                button14.classList.remove("pointerEvents");
+                button15.classList.remove("pointerEvents");
+                button16.classList.remove("pointerEvents");
                 alert("Computer hat gewonnen");
                 console.log("Computer hat gewonnen");
                 while (computerArray.length > 0) {
@@ -577,11 +777,22 @@ var EndabgabeMittel;
                 while (spielerArray.length > 0) {
                     myArrayButtonsMittel.push(spielerArray.pop());
                 }
+                erstStartDrückenMittel();
                 console.log(computerArray);
                 console.log(spielerArray);
                 console.log(myArrayButtonsMittel);
+                console.log(spielerpunktestandNumber);
+                console.log(computerpunktestandNumber);
                 if (rundenanzahlcounterMittel == -1) {
-                    alert("Spiel ist vorbei");
+                    if (spielerpunktestandNumber > computerpunktestandNumber) {
+                        alert("Spiel ist vorbei. Spieler hat gewonnen");
+                    }
+                    if (spielerpunktestandNumber == computerpunktestandNumber) {
+                        alert("Spiel ist vorbei. Unentschieden!");
+                    }
+                    if (computerpunktestandNumber > spielerpunktestandNumber) {
+                        alert("Spiel ist vorbei. Computer hat gewonnen!");
+                    }
                     toggleSchwierigkeitsgradErneutMittel();
                     rundenanzahl.innerHTML = "Runden: 5";
                     spielerpunktestand.innerHTML = "Spieler: 0";
@@ -590,6 +801,7 @@ var EndabgabeMittel;
                     indexzaehlerSpieler = 1;
                     indexzaehlerComputer = 1;
                     rundenanzahlcounterMittel = 3;
+                    location.reload();
                 }
             }
             else if (myArrayButtonsMittel.length < 1) {
@@ -598,17 +810,45 @@ var EndabgabeMittel;
                 rundenanzahl.innerHTML = "Runden: " + rundenanzahlcounterMittel--;
                 computerpunktestand.innerHTML = "Computer: " + indexzaehlerComputer++;
                 spielerpunktestand.innerHTML = "Spieler: " + indexzaehlerSpieler++;
+                startButtonMittel.classList.remove("pointerEvents");
+                button1.classList.remove("pointerEvents");
+                button2.classList.remove("pointerEvents");
+                button3.classList.remove("pointerEvents");
+                button4.classList.remove("pointerEvents");
+                button5.classList.remove("pointerEvents");
+                button6.classList.remove("pointerEvents");
+                button7.classList.remove("pointerEvents");
+                button8.classList.remove("pointerEvents");
+                button9.classList.remove("pointerEvents");
+                button10.classList.remove("pointerEvents");
+                button11.classList.remove("pointerEvents");
+                button12.classList.remove("pointerEvents");
+                button13.classList.remove("pointerEvents");
+                button14.classList.remove("pointerEvents");
+                button15.classList.remove("pointerEvents");
+                button16.classList.remove("pointerEvents");
                 while (computerArray.length > 0) {
                     myArrayButtonsMittel.push(computerArray.pop());
                 }
                 while (spielerArray.length > 0) {
                     myArrayButtonsMittel.push(spielerArray.pop());
                 }
+                erstStartDrückenMittel();
                 console.log(computerArray);
                 console.log(spielerArray);
                 console.log(myArrayButtonsMittel);
+                console.log(spielerpunktestandNumber);
+                console.log(computerpunktestandNumber);
                 if (rundenanzahlcounterMittel == -1) {
-                    alert("Spiel ist vorbei");
+                    if (spielerpunktestandNumber > computerpunktestandNumber) {
+                        alert("Spiel ist vorbei. Spieler hat gewonnen");
+                    }
+                    if (spielerpunktestandNumber == computerpunktestandNumber) {
+                        alert("Spiel ist vorbei. Unentschieden!");
+                    }
+                    if (computerpunktestandNumber > spielerpunktestandNumber) {
+                        alert("Spiel ist vorbei. Computer hat gewonnen!");
+                    }
                     toggleSchwierigkeitsgradErneutMittel();
                     rundenanzahl.innerHTML = "Runden: 5";
                     spielerpunktestand.innerHTML = "Spieler: 0";
@@ -617,6 +857,7 @@ var EndabgabeMittel;
                     indexzaehlerSpieler = 1;
                     indexzaehlerComputer = 1;
                     rundenanzahlcounterMittel = 3;
+                    location.reload();
                 }
             }
         }
@@ -657,6 +898,9 @@ var EndabgabeSchwierig;
     var leicht = document.getElementById("leicht");
     var mittel = document.getElementById("mittel");
     var schwierig = document.getElementById("schwierig");
+    //Schwierigkeitsgrade wurden definiert//
+    var spielerpunktestandNumber = 0;
+    var computerpunktestandNumber = 0;
     //Punktestand und Rundenanzahl wurden definiert//
     var spielerpunktestand = document.getElementById("Spielerpunktestand");
     var computerpunktestand = document.getElementById("Computerpunktestand");
@@ -687,10 +931,65 @@ var EndabgabeSchwierig;
     function toggleSchwierigkeitsgradSchwierig() {
         leicht.classList.add("isHidden");
         mittel.classList.add("isHidden");
+        schwierig.classList.add("isHidden");
     }
     function toggleSchwierigkeitsgradErneutSchwierig() {
         leicht.classList.remove("isHidden");
         mittel.classList.remove("isHidden");
+    }
+    function erstStartDrückenSchwierig() {
+        button1.classList.add("pointerEvents");
+        button2.classList.add("pointerEvents");
+        button3.classList.add("pointerEvents");
+        button4.classList.add("pointerEvents");
+        button5.classList.add("pointerEvents");
+        button6.classList.add("pointerEvents");
+        button7.classList.add("pointerEvents");
+        button8.classList.add("pointerEvents");
+        button9.classList.add("pointerEvents");
+        button10.classList.add("pointerEvents");
+        button11.classList.add("pointerEvents");
+        button12.classList.add("pointerEvents");
+        button13.classList.add("pointerEvents");
+        button14.classList.add("pointerEvents");
+        button15.classList.add("pointerEvents");
+        button16.classList.add("pointerEvents");
+        button17.classList.add("pointerEvents");
+        button18.classList.add("pointerEvents");
+        button19.classList.add("pointerEvents");
+        button20.classList.add("pointerEvents");
+        button21.classList.add("pointerEvents");
+        button22.classList.add("pointerEvents");
+        button23.classList.add("pointerEvents");
+        button24.classList.add("pointerEvents");
+        button25.classList.add("pointerEvents");
+    }
+    function erstStartDrückenRemoveSchwierig() {
+        button1.classList.remove("pointerEvents");
+        button2.classList.remove("pointerEvents");
+        button3.classList.remove("pointerEvents");
+        button4.classList.remove("pointerEvents");
+        button5.classList.remove("pointerEvents");
+        button6.classList.remove("pointerEvents");
+        button7.classList.remove("pointerEvents");
+        button8.classList.remove("pointerEvents");
+        button9.classList.remove("pointerEvents");
+        button10.classList.remove("pointerEvents");
+        button11.classList.remove("pointerEvents");
+        button12.classList.remove("pointerEvents");
+        button13.classList.remove("pointerEvents");
+        button14.classList.remove("pointerEvents");
+        button15.classList.remove("pointerEvents");
+        button16.classList.remove("pointerEvents");
+        button17.classList.remove("pointerEvents");
+        button18.classList.remove("pointerEvents");
+        button19.classList.remove("pointerEvents");
+        button20.classList.remove("pointerEvents");
+        button21.classList.remove("pointerEvents");
+        button22.classList.remove("pointerEvents");
+        button23.classList.remove("pointerEvents");
+        button24.classList.remove("pointerEvents");
+        button25.classList.remove("pointerEvents");
     }
     function SpielerHat(elemente) {
         var ergebnis = true;
@@ -746,12 +1045,15 @@ var EndabgabeSchwierig;
         startButtonLeicht.classList.add("isHidden");
         startButtonMittel.classList.add("isHidden");
         toggleSchwierigkeitsgradSchwierig();
+        erstStartDrückenSchwierig();
         //Funktion Kreuz in Felder 1-16 setzen, bei Klick auf eines der Felder (Spielerzug)//
         function SpielerZugSchwierig(button) {
             if (indexzaehler <= myArrayButtonsSchwierig.length) {
                 var iKreuz = document.createElement("i");
                 iKreuz.className = "fas fa-times";
                 button.appendChild(iKreuz);
+                button.classList.add("pointerEvents");
+                startButtonSchwierig.classList.add("pointerEvents");
                 /*
                 button.classList.add("pointerEvents");
                 */
@@ -824,6 +1126,9 @@ var EndabgabeSchwierig;
             var iKreis = document.createElement("i");
             iKreis.className = "far fa-circle";
             button.appendChild(iKreis);
+            startButtonSchwierig.classList.add("pointerEvents");
+            erstStartDrückenRemoveSchwierig();
+            button.classList.add("pointerEvents");
             /*
             button.classList.add("pointerEvents");
             */
@@ -853,6 +1158,7 @@ var EndabgabeSchwierig;
             var iKreis = document.createElement("i");
             iKreis.className = "far fa-circle";
             button.appendChild(iKreis);
+            button.classList.add("pointerEvents");
             /*
             button.classList.add("pointerEvents");
             */
@@ -886,6 +1192,33 @@ var EndabgabeSchwierig;
                 SpielerHat([button1, button5, button9, button16, button25]) || SpielerHat([button21, button14, button9, button11, button17])) {
                 spielerpunktestand.innerHTML = "Spieler: " + indexzaehlerSpieler++;
                 rundenanzahl.innerHTML = "Runden: " + rundenanzahlcounterSchwierig--;
+                spielerpunktestandNumber++;
+                startButtonSchwierig.classList.remove("pointerEvents");
+                button1.classList.remove("pointerEvents");
+                button2.classList.remove("pointerEvents");
+                button3.classList.remove("pointerEvents");
+                button4.classList.remove("pointerEvents");
+                button5.classList.remove("pointerEvents");
+                button6.classList.remove("pointerEvents");
+                button7.classList.remove("pointerEvents");
+                button8.classList.remove("pointerEvents");
+                button9.classList.remove("pointerEvents");
+                button10.classList.remove("pointerEvents");
+                button11.classList.remove("pointerEvents");
+                button12.classList.remove("pointerEvents");
+                button13.classList.remove("pointerEvents");
+                button14.classList.remove("pointerEvents");
+                button15.classList.remove("pointerEvents");
+                button16.classList.remove("pointerEvents");
+                button17.classList.remove("pointerEvents");
+                button18.classList.remove("pointerEvents");
+                button19.classList.remove("pointerEvents");
+                button20.classList.remove("pointerEvents");
+                button21.classList.remove("pointerEvents");
+                button22.classList.remove("pointerEvents");
+                button23.classList.remove("pointerEvents");
+                button24.classList.remove("pointerEvents");
+                button25.classList.remove("pointerEvents");
                 alert("Spieler hat gewonnen");
                 console.log("Spieler hat gewonnen");
                 while (spielerArray.length > 0) {
@@ -894,11 +1227,20 @@ var EndabgabeSchwierig;
                 while (computerArray.length > 0) {
                     myArrayButtonsSchwierig.push(computerArray.pop());
                 }
+                erstStartDrückenSchwierig();
                 console.log(computerArray);
                 console.log(spielerArray);
                 console.log(myArrayButtonsSchwierig);
                 if (rundenanzahlcounterSchwierig == -1) {
-                    alert("Spiel ist vorbei");
+                    if (spielerpunktestandNumber > computerpunktestandNumber) {
+                        alert("Spiel ist vorbei. Spieler hat gewonnen");
+                    }
+                    if (spielerpunktestandNumber == computerpunktestandNumber) {
+                        alert("Spiel ist vorbei. Unentschieden!");
+                    }
+                    if (computerpunktestandNumber > spielerpunktestandNumber) {
+                        alert("Spiel ist vorbei. Computer hat gewonnen!");
+                    }
                     toggleSchwierigkeitsgradErneutSchwierig();
                     rundenanzahl.innerHTML = "Runden: 5";
                     spielerpunktestand.innerHTML = "Spieler: 0";
@@ -907,6 +1249,7 @@ var EndabgabeSchwierig;
                     indexzaehlerSpieler = 1;
                     indexzaehlerComputer = 1;
                     rundenanzahlcounterSchwierig = 4;
+                    location.reload();
                 }
             }
             else if (ComputerHat([button1, button2, button3, button13, button21]) || ComputerHat([button4, button5, button6, button14, button22]) ||
@@ -916,6 +1259,33 @@ var EndabgabeSchwierig;
                 ComputerHat([button1, button5, button9, button16, button25]) || ComputerHat([button21, button14, button9, button11, button17])) {
                 rundenanzahl.innerHTML = "Runden: " + rundenanzahlcounterSchwierig--;
                 computerpunktestand.innerHTML = "Computer: " + indexzaehlerComputer++;
+                computerpunktestandNumber++;
+                startButtonSchwierig.classList.remove("pointerEvents");
+                button1.classList.remove("pointerEvents");
+                button2.classList.remove("pointerEvents");
+                button3.classList.remove("pointerEvents");
+                button4.classList.remove("pointerEvents");
+                button5.classList.remove("pointerEvents");
+                button6.classList.remove("pointerEvents");
+                button7.classList.remove("pointerEvents");
+                button8.classList.remove("pointerEvents");
+                button9.classList.remove("pointerEvents");
+                button10.classList.remove("pointerEvents");
+                button11.classList.remove("pointerEvents");
+                button12.classList.remove("pointerEvents");
+                button13.classList.remove("pointerEvents");
+                button14.classList.remove("pointerEvents");
+                button15.classList.remove("pointerEvents");
+                button16.classList.remove("pointerEvents");
+                button17.classList.remove("pointerEvents");
+                button18.classList.remove("pointerEvents");
+                button19.classList.remove("pointerEvents");
+                button20.classList.remove("pointerEvents");
+                button21.classList.remove("pointerEvents");
+                button22.classList.remove("pointerEvents");
+                button23.classList.remove("pointerEvents");
+                button24.classList.remove("pointerEvents");
+                button25.classList.remove("pointerEvents");
                 alert("Computer hat gewonnen");
                 console.log("Computer hat gewonnen");
                 while (computerArray.length > 0) {
@@ -924,11 +1294,20 @@ var EndabgabeSchwierig;
                 while (spielerArray.length > 0) {
                     myArrayButtonsSchwierig.push(spielerArray.pop());
                 }
+                erstStartDrückenSchwierig();
                 console.log(computerArray);
                 console.log(spielerArray);
                 console.log(myArrayButtonsSchwierig);
                 if (rundenanzahlcounterSchwierig == -1) {
-                    alert("Spiel ist vorbei");
+                    if (spielerpunktestandNumber > computerpunktestandNumber) {
+                        alert("Spiel ist vorbei. Spieler hat gewonnen");
+                    }
+                    if (spielerpunktestandNumber == computerpunktestandNumber) {
+                        alert("Spiel ist vorbei. Unentschieden!");
+                    }
+                    if (computerpunktestandNumber > spielerpunktestandNumber) {
+                        alert("Spiel ist vorbei. Computer hat gewonnen!");
+                    }
                     toggleSchwierigkeitsgradErneutSchwierig();
                     rundenanzahl.innerHTML = "Runden: 5";
                     spielerpunktestand.innerHTML = "Spieler: 0";
@@ -937,6 +1316,7 @@ var EndabgabeSchwierig;
                     indexzaehlerSpieler = 1;
                     indexzaehlerComputer = 1;
                     rundenanzahlcounterSchwierig = 4;
+                    location.reload();
                 }
             }
             else if (myArrayButtonsSchwierig.length < 1) {
@@ -945,17 +1325,52 @@ var EndabgabeSchwierig;
                 rundenanzahl.innerHTML = "Runden: " + rundenanzahlcounterSchwierig--;
                 computerpunktestand.innerHTML = "Computer: " + indexzaehlerComputer++;
                 spielerpunktestand.innerHTML = "Spieler: " + indexzaehlerSpieler++;
+                startButtonSchwierig.classList.remove("pointerEvents");
+                button1.classList.remove("pointerEvents");
+                button2.classList.remove("pointerEvents");
+                button3.classList.remove("pointerEvents");
+                button4.classList.remove("pointerEvents");
+                button5.classList.remove("pointerEvents");
+                button6.classList.remove("pointerEvents");
+                button7.classList.remove("pointerEvents");
+                button8.classList.remove("pointerEvents");
+                button9.classList.remove("pointerEvents");
+                button10.classList.remove("pointerEvents");
+                button11.classList.remove("pointerEvents");
+                button12.classList.remove("pointerEvents");
+                button13.classList.remove("pointerEvents");
+                button14.classList.remove("pointerEvents");
+                button15.classList.remove("pointerEvents");
+                button16.classList.remove("pointerEvents");
+                button17.classList.remove("pointerEvents");
+                button18.classList.remove("pointerEvents");
+                button19.classList.remove("pointerEvents");
+                button20.classList.remove("pointerEvents");
+                button21.classList.remove("pointerEvents");
+                button22.classList.remove("pointerEvents");
+                button23.classList.remove("pointerEvents");
+                button24.classList.remove("pointerEvents");
+                button25.classList.remove("pointerEvents");
                 while (computerArray.length > 0) {
                     myArrayButtonsSchwierig.push(computerArray.pop());
                 }
                 while (spielerArray.length > 0) {
                     myArrayButtonsSchwierig.push(spielerArray.pop());
                 }
+                erstStartDrückenSchwierig();
                 console.log(computerArray);
                 console.log(spielerArray);
                 console.log(myArrayButtonsSchwierig);
                 if (rundenanzahlcounterSchwierig == -1) {
-                    alert("Spiel ist vorbei");
+                    if (spielerpunktestandNumber > computerpunktestandNumber) {
+                        alert("Spiel ist vorbei. Spieler hat gewonnen");
+                    }
+                    if (spielerpunktestandNumber == computerpunktestandNumber) {
+                        alert("Spiel ist vorbei. Unentschieden!");
+                    }
+                    if (computerpunktestandNumber > spielerpunktestandNumber) {
+                        alert("Spiel ist vorbei. Computer hat gewonnen!");
+                    }
                     toggleSchwierigkeitsgradErneutSchwierig();
                     rundenanzahl.innerHTML = "Runden: 5";
                     spielerpunktestand.innerHTML = "Spieler: 0";
@@ -964,6 +1379,7 @@ var EndabgabeSchwierig;
                     indexzaehlerSpieler = 1;
                     indexzaehlerComputer = 1;
                     rundenanzahlcounterSchwierig = 4;
+                    location.reload();
                 }
             }
         }
